@@ -1,6 +1,7 @@
 import React from "react";
 
 import { useEstablishmentStore } from "../store/useEstablishmentStore";
+import { Link } from "react-router-dom";
 
 export default function TypeSelection() {
   const establishmentTypes = useEstablishmentStore((state) => state.establishmentTypes);
@@ -9,12 +10,12 @@ export default function TypeSelection() {
       {" "}
       {/* <--- Added div for buttons and Tailwind classes */}
       {establishmentTypes.map((type) => (
-        <button
+        <Link
           key={type} // <--- NEW: Add key prop
           className="px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors duration-200 text-sm font-medium shadow-md"
         >
           {type.charAt(0).toUpperCase() + type.slice(1)} {/* <--- Optional: Capitalize type */}
-        </button>
+        </Link>
       ))}
     </div>
   );

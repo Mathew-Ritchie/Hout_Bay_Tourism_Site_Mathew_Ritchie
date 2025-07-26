@@ -238,6 +238,34 @@ const establishments = [
     imageUrl:
       "https://www.club790businessdirectory.co.za/wp-content/uploads/2020/07/Sentinal-Pharmacy-image-2.jpg",
   },
+  {
+    id: "a1",
+    name: "World of Birds Wildlife Sanctuary & Monkey Park",
+    tradingHours: "Mon-Fri: 09:00 - 19:00, Sat: 09:00 - 17:00, Sun: 09:00 - 14:00",
+    location: { latitude: -34.037, longitude: 18.36 },
+    address: "Shoprite Centre, Main Rd, Hout Bay",
+    category: "Zoo, Wild Life",
+    type: "activity", // <-- NEW 'type' property
+    phoneNumber: "+27 21 790 5678",
+    website: "https://www.dischem.co.za",
+    rating: 4.2,
+    imageUrl:
+      "https://i.ytimg.com/vi/3M8TqVrBeoA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB_FG29yO0OSkkCcSEMEavCYOldIA",
+  },
+  {
+    id: "a2",
+    name: "Bay Harbour Market",
+    tradingHours: "Mon-Fri: 09:00 - 19:00, Sat: 09:00 - 17:00, Sun: 09:00 - 14:00",
+    location: { latitude: -34.037, longitude: 18.36 },
+    address: "Shoprite Centre, Main Rd, Hout Bay",
+    category: "Zoo, Wild Life",
+    type: "activity", // <-- NEW 'type' property
+    phoneNumber: "+27 21 790 5678",
+    website: "https://www.dischem.co.za",
+    rating: 4.2,
+    imageUrl:
+      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrqGrBmB0pXcQva7JFhs2319uvVjE4jhg6lFqcBvTrbrdtb6zCe5mhAaVRSAGAxEQxl6JQN_YP0Oc8zJh71XVpfRSYASrZARx9ESXG2Agy-HCO3yZrnwk-c1UAqBNnfdRe96HbJ=s1360-w1360-h1020-rw",
+  },
 ];
 
 export const handlers = [
