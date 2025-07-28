@@ -28,10 +28,27 @@ export default function IndividualEstablishmentPage() {
   }, [id, fetchIndividualEstablishment]); // Re-fetch if ID changes
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8 px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-      <h1 className="text-4xl sm:text-5xl font-extrabold text-center text-gray-900 mb-8 md:mb-12">
+    <div className="min-h-screen bg-gray-100 py-8 px-4 sm:px-6 lg:px-8 flex flex-col items-center pt-0">
+      {/* <h1 className="text-4xl sm:text-5xl font-extrabold text-center text-gray-900 mb-8 md:mb-12">
         Establishment Details
-      </h1>
+      </h1> */}
+      {selectedEstablishmentDetails && ( // <-- NEW: Conditional rendering for the link
+        <div className="w-screen mb-4 flex justify-start pl-4 sm:pl-6 lg:pl-8">
+          {" "}
+          {/* Added flex and justify-start for alignment */}
+          <Link
+            to={`/establishments/${selectedEstablishmentDetails.type}`}
+            className="mt-6 inline-block px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-colors duration-200"
+          >
+            Back to{" "}
+            {selectedEstablishmentDetails.type
+              ? selectedEstablishmentDetails.type.charAt(0).toUpperCase() +
+                selectedEstablishmentDetails.type.slice(1)
+              : "All"}{" "}
+            Establishments
+          </Link>
+        </div>
+      )}
 
       {singleEstablishmentLoading && (
         <p className="text-center text-gray-600 text-xl">Loading details...</p>
@@ -100,17 +117,6 @@ export default function IndividualEstablishmentPage() {
               Google Maps
             </a>
           </p>
-          <Link
-            to={`/establishments/${selectedEstablishmentDetails.type}`}
-            className="mt-6 inline-block px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-colors duration-200"
-          >
-            Back to{" "}
-            {selectedEstablishmentDetails.type
-              ? selectedEstablishmentDetails.type.charAt(0).toUpperCase() +
-                selectedEstablishmentDetails.type.slice(1)
-              : "All"}{" "}
-            Establishments
-          </Link>
         </div>
       ) : (
         !singleEstablishmentLoading &&

@@ -16,17 +16,26 @@ export default function EstablishmentsListPage() {
   const error = useEstablishmentStore((state) => state.error);
   const message = useEstablishmentStore((state) => state.message);
   const applyTypeFilter = useEstablishmentStore((state) => state.applyTypeFilter); // <-- NEW: Select applyTypeFilter action
+  const fetchInitialEstablishments = useEstablishmentStore(
+    (state) => state.fetchInitialEstablishments
+  );
+  const allEstablishments = useEstablishmentStore((state) => state.allEstablishments);
 
   // Fetch establishments or apply filter whenever the 'type' URL parameter changes
   useEffect(() => {
-    console.log(`EstablishmentsListPage.jsx: Applying filter for type: ${type || "All"}`);
-    // Call the store action to apply the filter based on the URL parameter
-    // This will update activeTypeFilter and then run _applyClientSideFilters
-    applyTypeFilter(type || null); // Pass type, or null if type is undefined (for "All Establishments" if routed directly)
+    // If allEstablishments data is not yet loaded, fetch it.
+    // This handles cases where user directly lands on /establishments/:type
+    if (allEstablishments.length === 0 && !loading) {
+      // Add !loading to prevent multiple fetches
+      console.log("EstablishmentsListPage.jsx: allEstablishments is empty, fetching initial data.");
+      fetchInitialEstablishments();
+    }
 
-    // Note: fetchInitialEstablishments should be called once, typically on the LandingPage or App.jsx mount,
-    // to ensure allEstablishments data is present for client-side filtering.
-  }, [type, applyTypeFilter]); // Re-run effect if 'type' or 'applyTypeFilter' changes
+    // Always apply the filter based on the current URL 'type' whenever the component renders
+    // or 'type' changes. This ensures the list updates correctly after back navigation.
+    console.log(`EstablishmentsListPage.jsx: Applying filter for type: ${type || "All"}`);
+    applyTypeFilter(type || null); // Pass type, or null for "All Establishments"
+  }, [type, applyTypeFilter, fetchInitialEstablishments, allEstablishments.length, loading]); // Added dependencies
 
   return (
     <div className="min-h-screen bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
