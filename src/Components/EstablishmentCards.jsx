@@ -5,21 +5,15 @@ import React from "react";
 export default function EstablishmentCards({ establishments, loading, error, message }) {
   return (
     <>
-      {" "}
-      {/* React Fragment to return multiple top-level elements */}
       {/* Message and Error Display */}
       {error && <p className="text-center text-lg text-red-600 mb-4">Error: {error}</p>}
-      {/* Section Title (Optional, can be removed if parent provides it) */}
-      {/* <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 text-center mb-6">
-        All Establishments
-      </h2> */}
       {/* Loading State */}
       {loading ? (
         <p className="text-center text-gray-600 text-xl">Loading establishments...</p>
       ) : establishments.length === 0 ? (
         <p className="text-center text-gray-600 text-xl">No establishments available.</p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-sm sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto">
           {establishments.map((establishment) => (
             <div
               key={establishment.id}

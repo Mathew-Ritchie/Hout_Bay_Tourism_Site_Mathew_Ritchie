@@ -30,10 +30,8 @@ export default function EstablishmentsListPage() {
 
   return (
     <div className="min-h-screen bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
-      <h1 className="text-4xl sm:text-5xl font-extrabold text-center text-gray-900 mb-8 md:mb-12">
-        {type
-          ? `${type.charAt(0).toUpperCase() + type.slice(1)} Establishments`
-          : "All Establishments"}
+      <h1 className="text-4xl sm:text-5xl font-extrabold text-center text-gray-900 mb-4 md:mb-6">
+        {type ? `${type.charAt(0).toUpperCase() + type.slice(1)}` : "All Establishments"}
       </h1>
 
       {/* Render the TypeSelection component */}
