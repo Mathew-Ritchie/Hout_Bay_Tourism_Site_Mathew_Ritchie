@@ -11,7 +11,9 @@ export const useEstablishmentStore = create((set, get) => ({
   message: "",
   establishmentTypes: [], // Derived from allEstablishments
   activeTypeFilter: null, // State to store the currently active type filter
-
+  selectedEstablishmentDetails: null, // <-- NEW: State for individual establishment details
+  singleEstablishmentLoading: false, // <-- NEW: Loading state for individual fetch
+  singleEstablishmentError: null,
   // --- Actions ---
 
   // Action to set loading state
@@ -91,6 +93,44 @@ export const useEstablishmentStore = create((set, get) => ({
         error: err.message,
         message: `Failed to fetch initial establishments: ${err.message}`,
         loading: false,
+      });
+    }
+  },
+
+  fetchIndividualEstablishment: async (id) => {
+    set({
+      singleEstablishmentLoading: true,
+      singleEstablishmentError: null,
+      selectedEstablishmentDetails: null,
+    });
+    try {
+      const url = `http://localhost:5173/api/establishments/${id}`;
+      console.log(`Zustand Store: Attempting to fetch individual establishment from: ${url}`);
+
+      const response = await fetch(url);
+      console.log("Zustand Store: Individual fetch response received.", response);
+
+      if (!response.ok) {
+        console.error("Zustand Store: Individual fetch response not OK. Status:", response.status);
+        const errorData = await response
+          .json()
+          .catch(() => ({ message: "No detailed error message" }));
+        throw new Error(`HTTP error! Status: ${response.status} - ${errorData.message}`);
+      }
+      const data = await response.json();
+      console.log("Zustand Store: Individual data received:", data);
+
+      set({
+        selectedEstablishmentDetails: data,
+        singleEstablishmentLoading: false,
+        singleEstablishmentError: null,
+      });
+    } catch (err) {
+      console.error("Zustand Store: Error fetching individual establishment:", err);
+      set({
+        selectedEstablishmentDetails: null,
+        singleEstablishmentLoading: false,
+        singleEstablishmentError: err.message,
       });
     }
   },

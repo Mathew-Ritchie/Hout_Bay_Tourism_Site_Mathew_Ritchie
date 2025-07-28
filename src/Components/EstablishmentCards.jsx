@@ -1,7 +1,6 @@
-// src/components/EstablishmentCards.jsx
 import React from "react";
+import { NavLink } from "react-router-dom";
 
-// This component now receives its data and status as props
 export default function EstablishmentCards({ establishments, loading, error, message }) {
   return (
     <>
@@ -19,38 +18,40 @@ export default function EstablishmentCards({ establishments, loading, error, mes
               key={establishment.id}
               className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
             >
-              {/* Image */}
-              {establishment.imageUrl && (
-                <img
-                  src={establishment.imageUrl}
-                  alt={establishment.name}
-                  className="w-full h-48 object-cover object-center"
-                />
-              )}
-              {/* Content */}
-              <div className="p-4">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2 truncate">
-                  {establishment.name}
-                </h3>
-                <p className="text-sm text-gray-600 mb-1">
-                  <strong className="font-medium text-gray-700">Type:</strong>{" "}
-                  {establishment.type
-                    ? establishment.type.charAt(0).toUpperCase() + establishment.type.slice(1)
-                    : "N/A"}
-                </p>
-                <p className="text-sm text-gray-600 mb-1">
-                  <strong className="font-medium text-gray-700">Category:</strong>{" "}
-                  {establishment.category}
-                </p>
-                <p className="text-sm text-gray-600 mb-1">
-                  <strong className="font-medium text-gray-700">Hours:</strong>{" "}
-                  {establishment.tradingHours}
-                </p>
-                <p className="text-sm text-gray-600">
-                  <strong className="font-medium text-gray-700">Rating:</strong>{" "}
-                  {establishment.rating ? `${establishment.rating}/5` : "N/A"}
-                </p>
-              </div>
+              <NavLink to={`/${establishment.id}`}>
+                {/* Image */}
+                {establishment.imageUrl && (
+                  <img
+                    src={establishment.imageUrl}
+                    alt={establishment.name}
+                    className="w-full h-48 object-cover object-center"
+                  />
+                )}
+                {/* Content */}
+                <div className="p-4">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2 truncate">
+                    {establishment.name}
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-1">
+                    <strong className="font-medium text-gray-700">Type:</strong>{" "}
+                    {establishment.type
+                      ? establishment.type.charAt(0).toUpperCase() + establishment.type.slice(1)
+                      : "N/A"}
+                  </p>
+                  <p className="text-sm text-gray-600 mb-1">
+                    <strong className="font-medium text-gray-700">Category:</strong>{" "}
+                    {establishment.category}
+                  </p>
+                  <p className="text-sm text-gray-600 mb-1">
+                    <strong className="font-medium text-gray-700">Hours:</strong>{" "}
+                    {establishment.tradingHours}
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    <strong className="font-medium text-gray-700">Rating:</strong>{" "}
+                    {establishment.rating ? `${establishment.rating}/5` : "N/A"}
+                  </p>
+                </div>
+              </NavLink>
             </div>
           ))}
         </div>
