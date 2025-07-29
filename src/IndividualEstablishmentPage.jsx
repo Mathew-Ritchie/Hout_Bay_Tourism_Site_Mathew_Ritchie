@@ -67,12 +67,14 @@ export default function IndividualEstablishmentPage() {
               className="w-full h-64 object-cover object-center rounded-lg mb-6"
             />
           )}
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-center text-3xl font-bold text-gray-900 mb-4">
             {selectedEstablishmentDetails.name}
           </h2>
           {selectedEstablishmentDetails.description &&
             selectedEstablishmentDetails.description.map((item, index) => (
-              <p key={index}>{item}</p>
+              <p className="text-justify pb-5" key={index}>
+                {item}
+              </p>
             ))}
           <p className="text-lg text-gray-700 mb-2">
             <strong>Type:</strong>{" "}
