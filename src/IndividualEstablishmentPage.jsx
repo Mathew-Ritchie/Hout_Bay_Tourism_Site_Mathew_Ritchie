@@ -70,6 +70,10 @@ export default function IndividualEstablishmentPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             {selectedEstablishmentDetails.name}
           </h2>
+          {selectedEstablishmentDetails.description &&
+            selectedEstablishmentDetails.description.map((item, index) => (
+              <p key={index}>{item}</p>
+            ))}
           <p className="text-lg text-gray-700 mb-2">
             <strong>Type:</strong>{" "}
             {selectedEstablishmentDetails.type

@@ -16,7 +16,7 @@ const establishments = [
     rating: 4.5,
     imageUrl:
       "https://scontent-cpt1-1.xx.fbcdn.net/v/t39.30808-6/309435076_520494470082995_6572981777692265792_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=FOec8xyGbGAQ7kNvwERU_8f&_nc_oc=AdmNGYm2uifXl-PPfCoDyQORTLSC8wZZc38R4HGYwjXRcE3Knb6ZO8t5WhihXIG1Op0&_nc_zt=23&_nc_ht=scontent-cpt1-1.xx&_nc_gid=7lm9wztN5rCvyxL-7GzP-A&oh=00_AfTVu-J9Tk-3stcMkJOdHgg4DmLtkIYOPDlXWiI7Nufkfw&oe=68892C5E",
-    Description: [
+    description: [
       `Mariner's Wharf stands as Africa's first harbourfront emporium, a truly unique destination. 
     Conceived by local visionary Stanley Dorman and opened in 1984, it's a vibrant hub that masterfully blend
     a working fishing harbour with an engaging tourist attraction.`,
@@ -42,7 +42,18 @@ const establishments = [
     rating: 4.2,
     imageUrl:
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/7c/52/e3/dunes-beach-restaurant.jpg?w=900&h=500&s=1",
-    Description: "",
+    description: [
+      `Dunes Beach Restaurant, ideally situated directly on Hout Bay Beach, offers an unparalleled coastal dining 
+      experience. Boasting breathtaking panoramic views of Chapman's Peak, the Sentinel, and the expansive beach, 
+      it's a prime spot for any occasion. The relaxed, family-friendly atmosphere is enhanced by a popular children's
+       playground right by the terrace, allowing parents to unwind while kids play.`,
+      `Dunes serves a diverse menu throughout the day, from hearty breakfasts to delectable lunches and dinners. 
+      Specializing in fresh seafood, their offerings include traditional fish and chips, grilled line fish, calamari,
+      and prawns. Beyond seafood, the menu caters to various tastes with succulent burgers, grilled meats, pizzas, fresh
+      salads, and vegetarian options. Whether you're seeking a casual meal after a beach stroll, sundowner cocktails
+      with a spectacular sunset, or a memorable dinner, Dunes provides a picturesque setting and a comprehensive menu
+      to satisfy all.`,
+    ],
   },
   {
     id: "r3",
