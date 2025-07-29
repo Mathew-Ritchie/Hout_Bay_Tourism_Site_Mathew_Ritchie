@@ -75,31 +75,33 @@ Follow these steps to get the project up and running on your local machine.
 
 ## 📂 Project Structure
 
+```
 houtbay-site/
 ├── public/
 ├── src/
-│ ├── assets/ # Static assets like images
-│ │ └── houtbay01.jpg
-│ ├── components/ # Reusable UI components
-│ │ ├── EstablishmentCards.jsx
-│ │ └── TypeSelection.jsx
-│ ├── mocks/ # MSW setup and API handlers
-│ │ ├── browser.js
-│ │ └── handlers.js
-│ ├── pages/ # Top-level components representing distinct pages
-│ │ ├── EstablishmentsListPage.jsx
-│ │ ├── IndividualEstablishmentPage.jsx
-│ │ └── LandingPage.jsx
-│ ├── store/ # Zustand state management
-│ │ └── useEstablishmentStore.js
-│ ├── App.jsx # Main application component and router setup
-│ ├── index.css # Global CSS (Tailwind directives)
-│ └── main.jsx # Entry point of the React application
-├── .gitignore # Files/folders to ignore in Git
+│   ├── assets/             # Static assets like images
+│   │   └── houtbay01.jpg
+│   ├── components/         # Reusable UI components
+│   │   ├── EstablishmentCards.jsx
+│   │   └── TypeSelection.jsx
+│   ├── mocks/              # MSW setup and API handlers
+│   │   ├── browser.js
+│   │   └── handlers.js
+│   ├── pages/              # Top-level components representing distinct pages
+│   │   ├── EstablishmentsListPage.jsx
+│   │   ├── IndividualEstablishmentPage.jsx
+│   │   └── LandingPage.jsx
+│   ├── store/              # Zustand state management
+│   │   └── useEstablishmentStore.js
+│   ├── App.jsx             # Main application component and router setup
+│   ├── index.css           # Global CSS (Tailwind directives)
+│   └── main.jsx            # Entry point of the React application
+├── .gitignore              # Files/folders to ignore in Git
 ├── package.json
 ├── tailwind.config.js
 └── vite.config.js
 └── README.md
+```
 
 ## 🌐 API Mocking with MSW
 
