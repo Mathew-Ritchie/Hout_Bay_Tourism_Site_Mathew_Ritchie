@@ -16,6 +16,18 @@ const establishments = [
     rating: 4.5,
     imageUrl:
       "https://scontent-cpt1-1.xx.fbcdn.net/v/t39.30808-6/309435076_520494470082995_6572981777692265792_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=FOec8xyGbGAQ7kNvwERU_8f&_nc_oc=AdmNGYm2uifXl-PPfCoDyQORTLSC8wZZc38R4HGYwjXRcE3Knb6ZO8t5WhihXIG1Op0&_nc_zt=23&_nc_ht=scontent-cpt1-1.xx&_nc_gid=7lm9wztN5rCvyxL-7GzP-A&oh=00_AfTVu-J9Tk-3stcMkJOdHgg4DmLtkIYOPDlXWiI7Nufkfw&oe=68892C5E",
+    Description: [
+      `Mariner's Wharf stands as Africa's first harbourfront emporium, a truly unique destination. 
+    Conceived by local visionary Stanley Dorman and opened in 1984, it's a vibrant hub that masterfully blend
+    a working fishing harbour with an engaging tourist attraction.`,
+      `Visitors are immersed in a maritime ambiance, evident from the fresh fish market built around the hull of 
+    an old trawler, to the array of nautical-themed shops. The Wharfside Grill restaurant, renowned for its
+    fresh seafood, offers spectacular views of the harbour and Chapman's Peak, with private dining cabins for
+    an intimate experience. For a more casual bite, the Wharfette Bistro serves up famous fish and chips right
+    by the water's edge. Beyond dining, explore the Pearl Factory, the Shipwreck Shop brimming with maritime
+    artifacts, and other curio outlets. Mariner's Wharf is a lively testament to Hout Bay's rich fishing
+    heritage, attracting locals and international tourists alike with its authentic charm and delicious offerings.`,
+    ],
   },
   {
     id: "r2",
@@ -30,6 +42,7 @@ const establishments = [
     rating: 4.2,
     imageUrl:
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/7c/52/e3/dunes-beach-restaurant.jpg?w=900&h=500&s=1",
+    Description: "",
   },
   {
     id: "r3",
@@ -44,6 +57,7 @@ const establishments = [
     rating: 4.8,
     imageUrl:
       "https://www.houtbaytourism.com/images/stories/virtuemart/product/IMG_1196-scaled.jpg",
+    Description: "",
   },
   {
     id: "r4",
@@ -57,6 +71,7 @@ const establishments = [
     website: "http://www.chapmanspeakhotel.co.za",
     rating: 4.6,
     imageUrl: "https://www.sa-venues.com/visit/chapmanspeakhotel/10g.jpg",
+    Description: "",
   },
   {
     id: "r5",
@@ -71,6 +86,7 @@ const establishments = [
     rating: 4.1,
     imageUrl:
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/b1/9b/ac/a-fresh-start-a-new-day.jpg?w=900&h=500&s=1",
+    Description: "",
   },
   {
     id: "r6",
@@ -85,6 +101,7 @@ const establishments = [
     rating: 4.3,
     imageUrl:
       "https://fireflythetravelguy.travel.blog/wp-content/uploads/2012/04/ddd78-2012_01040306.jpg",
+    Description: "",
   },
   {
     id: "r7",
@@ -99,6 +116,7 @@ const establishments = [
     rating: 4.3,
     imageUrl:
       "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq-lLk5wV_CSz5nTCcx22v73n-mMYJ1KuV7Ps9SPQEiqurSqn7nTnnYn5XY2e91rC66yGFUWPEwhFbSspG-qvYlEfyQ040CVFkansmu_eQftosuQAyHNB0gr-WJTGMg3ZB88k0f=s680-w680-h510-rw",
+    Description: "",
   },
   {
     id: "r8",
@@ -113,6 +131,7 @@ const establishments = [
     rating: 4.2,
     imageUrl:
       "https://www.lookouthoutbay.co.za/wp-content/uploads/2024/01/Lookout-Deck-Drone-copy-1.jpg",
+    Description: "",
   },
   {
     id: "r9",
@@ -127,6 +146,7 @@ const establishments = [
     rating: 4.4,
     imageUrl:
       "https://lh3.googleusercontent.com/p/AF1QipM5vUyjL0KXM_RNnXZRBM_qa9We3gyjSd89bM7R=s680-w680-h510-rw",
+    Description: "",
   },
   {
     id: "r10",
@@ -141,6 +161,7 @@ const establishments = [
     rating: 4.6,
     imageUrl:
       "https://lh3.googleusercontent.com/p/AF1QipMBpyhhoLDoOD2hvsBHUPjn91hO9uIOALEuSxxE=s680-w680-h510-rw",
+    Description: "",
   },
   {
     id: "r11",
@@ -154,6 +175,7 @@ const establishments = [
     website: "https://veldtdbe.com/",
     rating: 4.5,
     imageUrl: "https://www.dining-out.co.za/ftp/gallery/11613--48012.jpg",
+    Description: "",
   },
   {
     id: "r12",
@@ -168,6 +190,7 @@ const establishments = [
     rating: 4.1,
     imageUrl:
       "https://lh3.googleusercontent.com/p/AF1QipP-Oo1qIcmIirfxP_2CR5vf--6sqgdaRg1gyAYY=s680-w680-h510-rw",
+    Description: "",
   },
   {
     id: "r13",
@@ -182,6 +205,7 @@ const establishments = [
     rating: 4.5,
     imageUrl:
       "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noHZXYrh4_L9u-2tlKVuAFsFSuq0jaRO78gHUyLwAicorNnpebuTTOrMwUVSCW_EyGIx3c4UXpU6xrF_nsWcp1fYHHkB37oPkqlveg2XdnsKe8iHNwla8BwJydru2Qda2v3a-WOBQ=s680-w680-h510-rw",
+    Description: "",
   },
   {
     id: "r14",
@@ -196,6 +220,7 @@ const establishments = [
     rating: 4.4,
     imageUrl:
       "https://lh3.googleusercontent.com/p/AF1QipPJufto3m-BXoi5bJN8PQiyWHxnHEFeDdXFX8vZ=s680-w680-h510-rw",
+    Description: "",
   },
   {
     id: "p1",
@@ -205,66 +230,201 @@ const establishments = [
     address: "Mainstream Centre, Main Rd, Hout Bay",
     category: "Pharmacy, Health, Retail",
     type: "Health care", // <-- NEW 'type' property
-    phoneNumber: "+27 21 790 1234",
+    phoneNumber: "+27 21 790 5077",
+    email: null,
     website: "https://www.clicks.co.za",
-    rating: 4.0,
+    rating: 2.7,
     imageUrl: "https://pargo.co.za/wp-content/uploads/2022/09/Top-PUP-blog-image-format.png",
+    Description: "",
   },
   {
     id: "p2",
     name: "Wheeler's Pharmacy",
-    tradingHours: "Mon-Fri: 09:00 - 19:00, Sat: 09:00 - 17:00, Sun: 09:00 - 14:00",
+    tradingHours: "Mon-Fri: 08:30 - 19:00, Sat - Sun(holidays): 09:00 - 18:00",
     location: { latitude: -34.037, longitude: 18.36 },
-    address: "Shoprite Centre, Main Rd, Hout Bay",
+    address: "The Passageway, Main Rd, Hout Bay, Cape Town, 7806",
     category: "Pharmacy, Health, Retail",
     type: "Health care", // <-- NEW 'type' property
     phoneNumber: "+27 21 790 5678",
-    website: "https://www.dischem.co.za",
-    rating: 4.2,
+    email: "rxwheelers@mweb.co.za",
+    website: "https://www.wheelerspharmacy.com/",
+    rating: 3.8,
     imageUrl:
       "https://images.squarespace-cdn.com/content/v1/5ea6b27006ea3b72b5d608f9/1587986162644-0C3KPY51FTN2FY9224BC/WheelersBG1.png",
+    Description: "",
   },
   {
     id: "p3",
     name: "Sentinal Dispensary",
-    tradingHours: "Mon-Fri: 09:00 - 19:00, Sat: 09:00 - 17:00, Sun: 09:00 - 14:00",
+    tradingHours: "Mon-Fri: 08:30 - 18:00, Sat: 08:30 - 13:00",
     location: { latitude: -34.037, longitude: 18.36 },
-    address: "Shoprite Centre, Main Rd, Hout Bay",
+    address: "51 Victoria Rd, Hout Bay, Cape Town, 7806",
     category: "Pharmacy, Health, Retail",
     type: "Health care", // <-- NEW 'type' property
-    phoneNumber: "+27 21 790 5678",
-    website: "https://www.dischem.co.za",
-    rating: 4.2,
+    phoneNumber: "+27 21 790 3400",
+    email: "rxsentinel@mweb.co.za",
+    website: "https://www.wheelerspharmacy.com/general-6",
+    rating: 4.1,
     imageUrl:
       "https://www.club790businessdirectory.co.za/wp-content/uploads/2020/07/Sentinal-Pharmacy-image-2.jpg",
+    Description: "",
   },
   {
     id: "a1",
     name: "World of Birds Wildlife Sanctuary & Monkey Park",
-    tradingHours: "Mon-Fri: 09:00 - 19:00, Sat: 09:00 - 17:00, Sun: 09:00 - 14:00",
+    tradingHours: "Mon-Sun: 09:00 - 17:00",
     location: { latitude: -34.037, longitude: 18.36 },
-    address: "Shoprite Centre, Main Rd, Hout Bay",
+    address: "World of Birds Wildlife Sanctuary, Valley Road, 7806, Hout Bay",
     category: "Zoo, Wild Life",
-    type: "activities", // <-- NEW 'type' property
-    phoneNumber: "+27 21 790 5678",
-    website: "https://www.dischem.co.za",
+    type: "attractions",
+    phoneNumber: "+27 21 790 2730",
+    email: "info@worldofbirds.co.za",
+    website: "https://worldofbirds.co.za/",
     rating: 4.2,
     imageUrl:
       "https://i.ytimg.com/vi/3M8TqVrBeoA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB_FG29yO0OSkkCcSEMEavCYOldIA",
+    Description: "",
   },
   {
     id: "a2",
     name: "Bay Harbour Market",
-    tradingHours: "Mon-Fri: 09:00 - 19:00, Sat: 09:00 - 17:00, Sun: 09:00 - 14:00",
+    tradingHours: "Fri: 17:00 - 21:00, Sat-Sun: 09:30 - 16:00",
     location: { latitude: -34.037, longitude: 18.36 },
-    address: "Shoprite Centre, Main Rd, Hout Bay",
-    category: "Zoo, Wild Life",
-    type: "activities", // <-- NEW 'type' property
-    phoneNumber: "+27 21 790 5678",
-    website: "https://www.dischem.co.za",
-    rating: 4.2,
+    address: "31 Harbour Rd, Hout Bay, Cape Town, 7872",
+    category: "Shops, Food, Music, Craft Beer",
+    type: "attractions",
+    phoneNumber: "+27 84 370 5715",
+    email: "info@bayharbour.co.za",
+    website: "https://www.bayharbour.co.za/",
+    rating: 4.4,
     imageUrl:
       "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrqGrBmB0pXcQva7JFhs2319uvVjE4jhg6lFqcBvTrbrdtb6zCe5mhAaVRSAGAxEQxl6JQN_YP0Oc8zJh71XVpfRSYASrZARx9ESXG2Agy-HCO3yZrnwk-c1UAqBNnfdRe96HbJ=s1360-w1360-h1020-rw",
+    Description: "",
+  },
+  {
+    id: "a3",
+    name: "Hout Bay Beach",
+    tradingHours: null,
+    location: null,
+    address: null,
+    category: "Beach, swimming, walking",
+    type: "attractions",
+    phoneNumber: null,
+    email: null,
+    website: null,
+    rating: null,
+    imageUrl: "https://www.capetown.travel/wp-content/uploads/Beach-in-hout-bay.jpg",
+    Description: "",
+  },
+  {
+    id: "a4",
+    name: "Sandy Bay Beach",
+    tradingHours: null,
+    location: null,
+    address: null,
+    category: "Beach, swimming, walking",
+    type: "attractions",
+    phoneNumber: null,
+    email: null,
+    website: null,
+    rating: null,
+    imageUrl:
+      "https://www.booknow.co.za/storage/app/uploads/public/67f/ce4/518/67fce45185b07655963955.jpg",
+    Description: "",
+  },
+  {
+    id: "a5",
+    name: "Llandudno Beach",
+    tradingHours: null,
+    location: null,
+    address: null,
+    category: "Beach, swimming, walking",
+    type: "attractions",
+    phoneNumber: null,
+    email: null,
+    website: null,
+    rating: null,
+    imageUrl:
+      "https://secretcapetown.co.za/wp-content/uploads/2022/01/Llandudno-Beach-Sunny-Day.jpg",
+    Description: "",
+  },
+  {
+    id: "a6",
+    name: "Chapman's peak drive",
+    tradingHours: null,
+    location: null,
+    address: null,
+    category: "Beach, swimming, walking",
+    type: "attractions",
+    phoneNumber: "+27 21 791 8220",
+    email: "info@chapmanspeakdrive.co.za",
+    website: "https://www.chapmanspeakdrive.co.za/",
+    rating: null,
+    imageUrl: "https://bicyclesouth.co.za/wp-content/uploads/2018/05/cycle-tour-364-3.jpg",
+    Description: "",
+  },
+  {
+    id: "a7",
+    name: "Hout Bay Harbour",
+    tradingHours: null,
+    location: null,
+    address: null,
+    category: "walking, Markets, scenic",
+    type: "attractions",
+    phoneNumber: "+27 21 791 8220",
+    email: "info@chapmanspeakdrive.co.za",
+    website: "https://www.chapmanspeakdrive.co.za/",
+    rating: null,
+    imageUrl: "https://daytrippers.co.za/wp-content/uploads/2018/10/Hout-Bay-Harbour.png",
+    Description: "",
+  },
+  {
+    id: "a8",
+    name: "Animal Ocean",
+    tradingHours: null,
+    location: null,
+    address: "41 Victoria Avenue, Hout Bay, Cape Town",
+    category: "Ocean safari, Kelp snokling, Kayaking",
+    type: "attractions",
+    phoneNumber: "+27 72 296 9132",
+    email: "info@animalocean.co.za",
+    website: "https://www.animalocean.co.za/",
+    rating: null,
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMpr0CKggUYUrRiEjTMH-Xb-NyuwGcmgZwvw&s",
+    Description: "",
+  },
+  {
+    id: "a9",
+    name: "Drumbeat Charters",
+    tradingHours: null,
+    location: null,
+    address: "41 Victoria Avenue, Hout Bay, Cape Town",
+    category: "Sea cruise",
+    type: "attractions",
+    phoneNumber: "+27 82 658 7055",
+    email: "hello@drumbeatcharters.co.za",
+    website: "https://www.animalocean.co.za/",
+    rating: 4.4,
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMpr0CKggUYUrRiEjTMH-Xb-NyuwGcmgZwvw&s",
+    Description: "",
+  },
+  {
+    id: "a10",
+    name: "Karbonkelberg Tourism",
+    tradingHours: "Mon-Fri 09:00-17:00, Sat-Sun 09:00-12:00",
+    location: null,
+    address: "Block C3, Salamander Rd, Hout Bay, Cape Town,",
+    category: "Hikes, tours",
+    type: "attractions",
+    phoneNumber: "+27 84 099 6601",
+    email: null,
+    website: "https://karbonkelbergtourism.co.za/",
+    rating: 5,
+    imageUrl:
+      "https://www.chapmanspeakdrive.co.za/media/k2/items/cache/77e3798bb9782084333898c5f75d9aab_XL.jpg",
+    Description: "",
   },
 ];
 
