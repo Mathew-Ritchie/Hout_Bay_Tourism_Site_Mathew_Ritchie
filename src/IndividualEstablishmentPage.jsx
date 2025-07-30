@@ -6,6 +6,10 @@ import "./App.css"; // Keep your global styles
 import MapSVG from "./SVGs/map";
 import EmailSVG from "./SVGs/email";
 import WebSVG from "./SVGs/WebSVG";
+import OpenTime from "./SVGs/OpenTime";
+import LocationSVG from "./SVGs/LocationSVG";
+import PhoneSVG from "./SVGs/PhoneSVG";
+import RatingSVG from "./SVGs/RatingSVG";
 
 export default function IndividualEstablishmentPage() {
   const { id } = useParams(); // Get the establishment ID from the URL
@@ -59,7 +63,7 @@ export default function IndividualEstablishmentPage() {
       )}
 
       {selectedEstablishmentDetails && !singleEstablishmentLoading && !singleEstablishmentError ? (
-        <div className="bg-white rounded-lg shadow-xl p-6 sm:p-8 max-w-2xl w-full">
+        <div className="bg-white rounded-lg shadow-xl p-6 sm:p-8 max-w-2xl w-full inline-flex flex-col justify-center items-start">
           {selectedEstablishmentDetails.imageUrl && (
             <img
               src={selectedEstablishmentDetails.imageUrl}
@@ -74,10 +78,16 @@ export default function IndividualEstablishmentPage() {
           {selectedEstablishmentDetails.category && (
             <div className="inline-flex gap-3">
               {selectedEstablishmentDetails.category.map((item) => (
-                <p className="text-xl text-gray-500 mb-2">{item}</p>
+                <p className="text-xl text-gray-500 mb-2 italic font-semibold">{item}</p>
               ))}
             </div>
           )}
+
+          {/* Operating hours  */}
+          <p className="text-lg text-gray-700 mb-2 inline-flex justify-center items-center gap-2 ">
+            <OpenTime />
+            {selectedEstablishmentDetails.tradingHours}
+          </p>
 
           {selectedEstablishmentDetails.description &&
             selectedEstablishmentDetails.description.map((item, index) => (
@@ -86,23 +96,22 @@ export default function IndividualEstablishmentPage() {
               </p>
             ))}
 
-          <p className="text-lg text-gray-700 mb-2">
-            <strong>Hours:</strong> {selectedEstablishmentDetails.tradingHours}
+          {/* Address  */}
+          <p className="inline-flex justify-center items-center gap-2">
+            <LocationSVG /> {selectedEstablishmentDetails.address}
           </p>
-          <p className="text-lg text-gray-700 mb-2">
-            <strong>Address:</strong> {selectedEstablishmentDetails.address}
-          </p>
-          <p className="text-lg text-gray-700 mb-2">
-            <strong>Phone:</strong> {selectedEstablishmentDetails.phoneNumber}
+          <p className="inline-flex justify-center items-center gap-2">
+            <PhoneSVG /> {selectedEstablishmentDetails.phoneNumber}
           </p>
 
-          <p className="text-lg text-gray-700 mb-4">
-            <strong>Rating:</strong>{" "}
+          <p className="inline-flex justify-center items-center gap-2">
+            <RatingSVG />
             {selectedEstablishmentDetails.rating
               ? `${selectedEstablishmentDetails.rating}/5`
               : "N/A"}
           </p>
-          <div className="inline-flex justify-center items-center gap-2">
+
+          <div className="inline-flex justify-center items-center gap-2 pt-5">
             {selectedEstablishmentDetails.website && (
               <p className="w-fit px-4 py-2 rounded-full text-sm font-medium shadow-md transition-colors duration-200 bg-gray-300 text-gray-800 hover:bg-gray-400">
                 {/* <strong>Website:</strong>{" "} */}
@@ -140,7 +149,7 @@ export default function IndividualEstablishmentPage() {
                 className="inline-flex justify-center items-center gap-2"
               >
                 <MapSVG />
-                Google Maps
+                Google
               </a>
             </p>
           </div>
