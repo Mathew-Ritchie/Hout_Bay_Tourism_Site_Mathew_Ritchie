@@ -3,6 +3,9 @@ import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom"; // Import useParams and Link
 import { useEstablishmentStore } from "./store/useEstablishmentStore"; // Adjust path to your store
 import "./App.css"; // Keep your global styles
+import MapSVG from "./SVGs/map";
+import EmailSVG from "./SVGs/email";
+import WebSVG from "./SVGs/WebSVG";
 
 export default function IndividualEstablishmentPage() {
   const { id } = useParams(); // Get the establishment ID from the URL
@@ -70,22 +73,21 @@ export default function IndividualEstablishmentPage() {
           <h2 className="text-center text-3xl font-bold text-gray-900 mb-4">
             {selectedEstablishmentDetails.name}
           </h2>
+          <p className="text-lg text-gray-700 mb-2">{selectedEstablishmentDetails.category}</p>
           {selectedEstablishmentDetails.description &&
             selectedEstablishmentDetails.description.map((item, index) => (
               <p className="text-justify pb-5" key={index}>
                 {item}
               </p>
             ))}
-          <p className="text-lg text-gray-700 mb-2">
+          {/* <p className="text-lg text-gray-700 mb-2">
             <strong>Type:</strong>{" "}
             {selectedEstablishmentDetails.type
               ? selectedEstablishmentDetails.type.charAt(0).toUpperCase() +
                 selectedEstablishmentDetails.type.slice(1)
               : "N/A"}
-          </p>
-          <p className="text-lg text-gray-700 mb-2">
-            <strong>Category:</strong> {selectedEstablishmentDetails.category}
-          </p>
+          </p> */}
+
           <p className="text-lg text-gray-700 mb-2">
             <strong>Hours:</strong> {selectedEstablishmentDetails.tradingHours}
           </p>
@@ -95,34 +97,55 @@ export default function IndividualEstablishmentPage() {
           <p className="text-lg text-gray-700 mb-2">
             <strong>Phone:</strong> {selectedEstablishmentDetails.phoneNumber}
           </p>
-          {selectedEstablishmentDetails.website && (
-            <p className="text-lg text-gray-700 mb-2">
-              <strong>Website:</strong>{" "}
-              <a
-                href={selectedEstablishmentDetails.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                {selectedEstablishmentDetails.website}
-              </a>
-            </p>
-          )}
+
           <p className="text-lg text-gray-700 mb-4">
             <strong>Rating:</strong>{" "}
             {selectedEstablishmentDetails.rating
               ? `${selectedEstablishmentDetails.rating}/5`
               : "N/A"}
           </p>
-          <p className="text-lg text-gray-700 mb-4">
-            <strong>Location:</strong>{" "}
-            <a
-              href={`https://www.google.com/maps/search/${selectedEstablishmentDetails.name}`}
-              target="blank"
-            >
-              Google Maps
-            </a>
-          </p>
+          <div className="inline-flex justify-center items-center gap-2">
+            {selectedEstablishmentDetails.website && (
+              <p className="w-fit px-4 py-2 rounded-full text-sm font-medium shadow-md transition-colors duration-200 bg-gray-300 text-gray-800 hover:bg-gray-400">
+                {/* <strong>Website:</strong>{" "} */}
+                <a
+                  href={selectedEstablishmentDetails.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex justify-center items-center gap-2"
+                >
+                  <WebSVG />
+                  Website
+                </a>
+              </p>
+            )}
+
+            {selectedEstablishmentDetails.email && (
+              <p className="w-fit px-4 py-2 rounded-full text-sm font-medium shadow-md transition-colors duration-200 bg-gray-300 text-gray-800 hover:bg-gray-400">
+                {/* <strong>email:</strong>{" "} */}
+                <a
+                  href={selectedEstablishmentDetails.email}
+                  target="_blank"
+                  rel=""
+                  className="inline-flex justify-center items-center gap-2"
+                >
+                  <EmailSVG /> email
+                </a>
+              </p>
+            )}
+
+            <p className="w-fit px-4 py-2 rounded-full text-sm font-medium shadow-md transition-colors duration-200 bg-gray-300 text-gray-800 hover:bg-gray-400">
+              {/* <strong>Location:</strong>{" "} */}
+              <a
+                href={`https://www.google.com/maps/search/${selectedEstablishmentDetails.name}`}
+                target="blank"
+                className="inline-flex justify-center items-center gap-2"
+              >
+                <MapSVG />
+                Google Maps
+              </a>
+            </p>
+          </div>
         </div>
       ) : (
         !singleEstablishmentLoading &&
