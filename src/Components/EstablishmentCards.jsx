@@ -32,16 +32,27 @@ export default function EstablishmentCards({ establishments, loading, error, mes
                   <h3 className="text-xl font-semibold text-gray-900 mb-2 truncate">
                     {establishment.name}
                   </h3>
-                  <p className="text-sm text-gray-600 mb-1">
+                  {/* <p className="text-sm text-gray-600 mb-1">
                     <strong className="font-medium text-gray-700">Type:</strong>{" "}
                     {establishment.type
                       ? establishment.type.charAt(0).toUpperCase() + establishment.type.slice(1)
                       : "N/A"}
-                  </p>
-                  <p className="text-sm text-gray-600 mb-1">
+                  </p> */}
+
+                  {establishment.category && (
+                    <div className="inline-flex flex-wrap gap-1">
+                      {establishment.category.map((item, index) => (
+                        <p key={index} className="text-sm text-gray-600 mb-1">
+                          | {item}
+                        </p>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* <p className="text-sm text-gray-600 mb-1">
                     <strong className="font-medium text-gray-700">Category:</strong>{" "}
                     {establishment.category}
-                  </p>
+                  </p> */}
                   <p className="text-sm text-gray-600 mb-1">
                     <strong className="font-medium text-gray-700">Hours:</strong>{" "}
                     {establishment.tradingHours}

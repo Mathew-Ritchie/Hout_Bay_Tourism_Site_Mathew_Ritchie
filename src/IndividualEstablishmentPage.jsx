@@ -32,9 +32,6 @@ export default function IndividualEstablishmentPage() {
 
   return (
     <div className="min-h-screen bg-gray-100 py-8 px-4 sm:px-6 lg:px-8 flex flex-col items-center pt-0">
-      {/* <h1 className="text-4xl sm:text-5xl font-extrabold text-center text-gray-900 mb-8 md:mb-12">
-        Establishment Details
-      </h1> */}
       {selectedEstablishmentDetails && ( // <-- NEW: Conditional rendering for the link
         <div className="w-screen mb-4 flex justify-start pl-4 sm:pl-6 lg:pl-8">
           {" "}
@@ -73,20 +70,21 @@ export default function IndividualEstablishmentPage() {
           <h2 className="text-center text-3xl font-bold text-gray-900 mb-4">
             {selectedEstablishmentDetails.name}
           </h2>
-          <p className="text-lg text-gray-700 mb-2">{selectedEstablishmentDetails.category}</p>
+
+          {selectedEstablishmentDetails.category && (
+            <div className="inline-flex gap-3">
+              {selectedEstablishmentDetails.category.map((item) => (
+                <p className="text-xl text-gray-500 mb-2">{item}</p>
+              ))}
+            </div>
+          )}
+
           {selectedEstablishmentDetails.description &&
             selectedEstablishmentDetails.description.map((item, index) => (
               <p className="text-justify pb-5" key={index}>
                 {item}
               </p>
             ))}
-          {/* <p className="text-lg text-gray-700 mb-2">
-            <strong>Type:</strong>{" "}
-            {selectedEstablishmentDetails.type
-              ? selectedEstablishmentDetails.type.charAt(0).toUpperCase() +
-                selectedEstablishmentDetails.type.slice(1)
-              : "N/A"}
-          </p> */}
 
           <p className="text-lg text-gray-700 mb-2">
             <strong>Hours:</strong> {selectedEstablishmentDetails.tradingHours}
