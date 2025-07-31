@@ -11,9 +11,11 @@ export const useEstablishmentStore = create((set, get) => ({
   message: "",
   establishmentTypes: [], // Derived from allEstablishments
   activeTypeFilter: null, // State to store the currently active type filter
+  activeCategoryFilter: null,
   selectedEstablishmentDetails: null, // <-- NEW: State for individual establishment details
   singleEstablishmentLoading: false, // <-- NEW: Loading state for individual fetch
   singleEstablishmentError: null,
+  establishmentCategories: [],
   // --- Actions ---
 
   // Action to set loading state
@@ -28,10 +30,31 @@ export const useEstablishmentStore = create((set, get) => ({
   // Action to set the active type filter
   setActiveTypeFilter: (type) => set({ activeTypeFilter: type }),
 
+  _updateCategoriesByFilter: () => {
+    const { allEstablishments, activeTypeFilter } = get();
+    // Get the establishments that match the current type filter
+    const establishmentsForCategories = activeTypeFilter
+      ? allEstablishments.filter((e) => e.type.toLowerCase() === activeTypeFilter.toLowerCase())
+      : allEstablishments;
+
+    // Extract unique categories from this filtered list
+    const uniqueCategories = [
+      ...new Set(establishmentsForCategories.flatMap((item) => item.category)),
+    ]
+      .filter((category) => category)
+      .sort();
+
+    set({ establishmentCategories: uniqueCategories });
+    console.log(
+      `Zustand Store: Categories updated for filter '${activeTypeFilter || "none"}':`,
+      uniqueCategories
+    );
+  },
+
   // Internal helper function to apply filters to allEstablishments
   // This function is called internally by other actions, not directly by components
   _applyClientSideFilters: () => {
-    const { allEstablishments, activeTypeFilter } = get(); // Get current state from the store
+    const { allEstablishments, activeTypeFilter, activeCategoryFilter } = get(); // Get current state from the store
 
     let currentFiltered = allEstablishments;
 
@@ -39,6 +62,12 @@ export const useEstablishmentStore = create((set, get) => ({
     if (activeTypeFilter) {
       currentFiltered = currentFiltered.filter(
         (e) => e.type.toLowerCase() === activeTypeFilter.toLowerCase()
+      );
+    }
+
+    if (activeCategoryFilter) {
+      currentFiltered = currentFiltered.filter(
+        (e) => e.category && e.category.includes(activeCategoryFilter)
       );
     }
     // Add sorting here if needed (e.g., by name)
@@ -74,19 +103,17 @@ export const useEstablishmentStore = create((set, get) => ({
       console.log("Zustand Store: All data received:", data);
 
       // Extract unique types from the FULL dataset (for the type buttons)
-      const uniqueTypes = [...new Set(data.map((item) => item.type))]
-        .filter((type) => type) // Filter out any undefined/null types
-        .sort(); // Optional: sort alphabetically
-
+      const uniqueTypes = [...new Set(data.map((item) => item.type))].filter((type) => type);
       set({
-        allEstablishments: data, // Store the full list
-        establishmentTypes: uniqueTypes, // Populate types from the full list
+        allEstablishments: data,
+        establishmentTypes: uniqueTypes,
+
         message: `All establishments loaded.`,
         loading: false,
       });
 
-      // After fetching all data, apply initial filter (if any)
       get()._applyClientSideFilters();
+      get()._updateCategoriesByFilter();
     } catch (err) {
       console.error("Zustand Store: Error fetching initial establishments:", err);
       set({
@@ -135,11 +162,16 @@ export const useEstablishmentStore = create((set, get) => ({
     }
   },
 
-  // Action to apply a type filter and trigger client-side filtering
-  // This is called by components (e.g., from NavLink clicks)
   applyTypeFilter: (type) => {
-    set({ activeTypeFilter: type });
+    set({ activeTypeFilter: type, activeCategoryFilter: null }); // <-- UPDATED: Reset category filter
     // Now, instead of re-fetching, we apply the filter to the already loaded data
+    get()._applyClientSideFilters();
+    get()._updateCategoriesByFilter();
+  },
+
+  // NEW: Action to apply a category filter
+  applyCategoryFilter: (category) => {
+    set({ activeCategoryFilter: category });
     get()._applyClientSideFilters();
   },
 }));

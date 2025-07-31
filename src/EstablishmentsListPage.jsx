@@ -5,6 +5,7 @@ import { useEstablishmentStore } from "./store/useEstablishmentStore"; // Correc
 import EstablishmentCards from "./Components/EstablishmentCards"; // Correct path to your components
 import TypeSelection from "./Components/TypeSelection";
 import "./App.css"; // Keep your global styles
+import CategorySelection from "./Components/CategorySelection";
 
 export default function EstablishmentsListPage() {
   // Get the 'type' parameter from the URL
@@ -45,6 +46,7 @@ export default function EstablishmentsListPage() {
 
       {/* Render the TypeSelection component */}
       <TypeSelection />
+      <CategorySelection />
 
       {/* Render the reusable EstablishmentCards component */}
       <EstablishmentCards

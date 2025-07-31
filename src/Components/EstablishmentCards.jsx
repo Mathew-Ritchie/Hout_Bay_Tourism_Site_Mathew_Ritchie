@@ -20,7 +20,8 @@ export default function EstablishmentCards({ establishments, loading, error, mes
               key={establishment.id}
               className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden max-w-sm sm:max-w-xl md:max-w-3xl lg:max-w-5xl"
             >
-              <NavLink className="w-20" to={`/${establishment.id}`}>
+              {/* UPDATED: NavLink now points to the correct details page URL and has a better class */}
+              <NavLink to={`/establishments/details/${establishment.id}`}>
                 {/* Image */}
                 {establishment.imageUrl && (
                   <img
