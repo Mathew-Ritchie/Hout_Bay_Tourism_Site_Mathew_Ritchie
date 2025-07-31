@@ -77,8 +77,10 @@ export default function IndividualEstablishmentPage() {
 
           {selectedEstablishmentDetails.category && (
             <div className="inline-flex gap-3">
-              {selectedEstablishmentDetails.category.map((item) => (
-                <p className="text-xl text-gray-500 mb-2 italic font-semibold">{item}</p>
+              {selectedEstablishmentDetails.category.map((item, index) => (
+                <p key={index} className="text-xl text-gray-500 mb-2 italic font-semibold">
+                  {item}
+                </p>
               ))}
             </div>
           )}
