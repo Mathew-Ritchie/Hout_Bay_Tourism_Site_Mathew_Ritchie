@@ -7,6 +7,7 @@ import "./App.css"; // Keep this if you have global Tailwind base styles or othe
 // <--- NEW: Import your image
 import Intro from "./Components/Intro";
 import TypeSelection from "./Components/TypeSelection";
+import LandingPageTypeSelection from "./Components/LandingPageTypeSelection";
 
 function LandingPage() {
   // Add establishmentTypes to the destructuring list
@@ -30,7 +31,8 @@ function LandingPage() {
     <div className="min-h-screen bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
       {/* Page Title */}
       <Intro />
-      <TypeSelection />
+      <h2 className="landing-sub-title pb-5 text-center ">Directory</h2>
+      <LandingPageTypeSelection />
     </div>
   );
 }
