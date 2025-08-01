@@ -23,7 +23,7 @@ export default function CategorySelection() {
               key={item}
               onClick={() => handleCategoryClick(item)}
               className={`
-                px-4 py-2 text-sm rounded-full shadow-md transition-all duration-200 ease-in-out
+                px-2 py-1 text-xs rounded-full shadow-md transition-all duration-200 ease-in-out
                 ${
                   activeCategoryFilter === item
                     ? "bg-blue-600 text-white font-semibold"
