@@ -87,7 +87,9 @@ export default function IndividualEstablishmentPage() {
 
           {/* Operating hours  */}
           <p className="text-lg text-gray-700 mb-2 inline-flex justify-center items-center gap-2 ">
-            <OpenTime />
+            <span className="w-6 h-6">
+              <OpenTime />
+            </span>
             {selectedEstablishmentDetails.tradingHours}
           </p>
 
@@ -100,7 +102,10 @@ export default function IndividualEstablishmentPage() {
 
           {/* Address  */}
           <p className="inline-flex justify-center items-center gap-2">
-            <LocationSVG /> {selectedEstablishmentDetails.address}
+            <span className="h-6 w-6">
+              <LocationSVG />{" "}
+            </span>
+            {selectedEstablishmentDetails.address}
           </p>
           <p className="inline-flex justify-center items-center gap-2">
             <PhoneSVG /> {selectedEstablishmentDetails.phoneNumber}

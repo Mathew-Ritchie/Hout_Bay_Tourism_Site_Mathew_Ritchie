@@ -21,7 +21,7 @@ export default function EstablishmentCards({ establishments, loading, error, mes
               className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden max-w-sm sm:max-w-xl md:max-w-3xl lg:max-w-5xl"
             >
               {/* UPDATED: NavLink now points to the correct details page URL and has a better class */}
-              <NavLink to={`/establishments/details/${establishment.id}`}>
+              <NavLink to={`/${establishment.id}`}>
                 {/* Image */}
                 {establishment.imageUrl && (
                   <img
@@ -51,7 +51,9 @@ export default function EstablishmentCards({ establishments, loading, error, mes
                   <div className="inline-flex flex-col justify-center items-start">
                     {/* Trading hours */}
                     <p className="text-sm text-gray-600 mb-2 inline-flex gap-2 items-center justify-center">
-                      <OpenTime />
+                      <span>
+                        <OpenTime />
+                      </span>
                       {establishment.tradingHours}
                     </p>
 
