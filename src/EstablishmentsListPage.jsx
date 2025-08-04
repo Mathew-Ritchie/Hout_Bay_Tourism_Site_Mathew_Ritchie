@@ -6,6 +6,7 @@ import EstablishmentCards from "./Components/EstablishmentCards"; // Correct pat
 import TypeSelection from "./Components/TypeSelection";
 import "./App.css"; // Keep your global styles
 import CategorySelection from "./Components/CategorySelection";
+import ScrollToTopBtn from "./Components/ScrollUpButton";
 
 export default function EstablishmentsListPage() {
   // Get the 'type' parameter from the URL
@@ -38,6 +39,12 @@ export default function EstablishmentsListPage() {
     applyTypeFilter(type || null); // Pass type, or null for "All Establishments"
   }, [type, applyTypeFilter, fetchInitialEstablishments, allEstablishments.length, loading]); // Added dependencies
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollTo(0, 0);
+    }
+  }, [type]);
+
   return (
     <div className="min-h-screen bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
       <h1 className="text-4xl sm:text-5xl font-extrabold text-center text-gray-900 mb-4 md:mb-6">
@@ -55,6 +62,7 @@ export default function EstablishmentsListPage() {
         error={error}
         message={message}
       />
+      <ScrollToTopBtn />
     </div>
   );
 }

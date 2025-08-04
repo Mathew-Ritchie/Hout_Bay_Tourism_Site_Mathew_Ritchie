@@ -10,6 +10,7 @@ import LandingPageTypeSelection from "./Components/LandingPageTypeSelection";
 import StatComponent from "./Components/StatComponent";
 import Footer from "./Components/Footer";
 import Gallery from "./Components/Gallery";
+import ScrollToTopBtn from "./Components/ScrollUpButton";
 
 function LandingPage() {
   // Add establishmentTypes to the destructuring list
@@ -33,11 +34,10 @@ function LandingPage() {
     <div className="min-h-screen bg-gray-100 pt-8">
       <Intro />
       <LandingPageTypeSelection />
-
       <StatComponent />
-
       <Gallery />
       <Footer />
+      <ScrollToTopBtn />
     </div>
   );
 }
