@@ -19,27 +19,30 @@ export default function LandingPageTypeSelection() {
   };
 
   return (
-    <div className="flex flex-wrap justify-center gap-4 mb-8 p-4 rounded-lg">
-      {/* NavLinks for each establishment type */}
-      {establishmentTypes.map((type) => (
-        <NavLink
-          to={`/establishments/${type}`} // Link to the specific type page
-          key={type}
-          // The className function handles the active state styling
-          className={({ isActive }) =>
-            `block relative h-50 w-70 rounded-lg shadow-md transition-all duration-200 overflow-hidden 
+    <div>
+      <h2 className="landing-sub-title pb-5 text-center ">Directory</h2>
+      <div className="flex flex-wrap justify-center gap-4 mb-8 p-4 rounded-lg">
+        {/* NavLinks for each establishment type */}
+        {establishmentTypes.map((type) => (
+          <NavLink
+            to={`/establishments/${type}`} // Link to the specific type page
+            key={type}
+            // The className function handles the active state styling
+            className={({ isActive }) =>
+              `block relative h-50 w-70 rounded-lg shadow-md transition-all duration-200 overflow-hidden 
             ${isActive ? "ring-4 ring-blue-600 ring-offset-2" : "ring-0"}`
-          }
-        >
-          {/* A div to display the background image and text */}
-          <div
-            className="text-shadow-style h-full w-full bg-cover bg-center flex items-center justify-center text-center text-4xl font-semibold text-white p-2"
-            style={{ backgroundImage: `url(${typeBackgrounds[type]})` }}
+            }
           >
-            {type.charAt(0).toUpperCase() + type.slice(1)}
-          </div>
-        </NavLink>
-      ))}
+            {/* A div to display the background image and text */}
+            <div
+              className="text-shadow-style h-full w-full bg-cover bg-center flex items-center justify-center text-center text-4xl font-semibold text-white p-2"
+              style={{ backgroundImage: `url(${typeBackgrounds[type]})` }}
+            >
+              {type.charAt(0).toUpperCase() + type.slice(1)}
+            </div>
+          </NavLink>
+        ))}
+      </div>
     </div>
   );
 }

@@ -3,9 +3,18 @@
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-  font-size: 40px;
+  font-size: 50px;
 }
 
 .text-shadow-style {
   text-shadow: 2px 2px black;
+}
+
+.footer-link {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 25px;
+  color: orange;
 }

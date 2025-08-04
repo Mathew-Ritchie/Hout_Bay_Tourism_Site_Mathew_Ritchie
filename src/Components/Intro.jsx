@@ -7,7 +7,7 @@ import sentinelsunset from "../assets/sentinelsunset.jpeg";
 
 export default function Intro() {
   return (
-    <div className="pb-10 px-2 sm:px-10  md:px-20 lg:px-20">
+    <div className="pb-10 px-4 sm:px-10  md:px-20 lg:px-20">
       <h1 className="text-4xl sm:text-5xl font-extrabold text-center text-gray-900 mb-2 md:mb-4">
         The Republic
       </h1>
