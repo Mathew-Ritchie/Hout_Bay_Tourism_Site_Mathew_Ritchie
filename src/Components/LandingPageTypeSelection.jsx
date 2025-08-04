@@ -19,7 +19,7 @@ export default function LandingPageTypeSelection() {
   };
 
   return (
-    <div className="flex flex-wrap justify-center gap-4 mb-8 p-4 rounded-lg shadow-sm">
+    <div className="flex flex-wrap justify-center gap-4 mb-8 p-4 rounded-lg">
       {/* NavLinks for each establishment type */}
       {establishmentTypes.map((type) => (
         <NavLink
@@ -27,7 +27,7 @@ export default function LandingPageTypeSelection() {
           key={type}
           // The className function handles the active state styling
           className={({ isActive }) =>
-            `block relative h-40 w-70 rounded-lg shadow-md transition-all duration-200 overflow-hidden 
+            `block relative h-50 w-70 rounded-lg shadow-md transition-all duration-200 overflow-hidden 
             ${isActive ? "ring-4 ring-blue-600 ring-offset-2" : "ring-0"}`
           }
         >
