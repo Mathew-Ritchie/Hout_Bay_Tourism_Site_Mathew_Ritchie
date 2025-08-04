@@ -32,7 +32,9 @@ export default function Gallery() {
             key={index}
             className="rounded-lg overflow-hidden shadow-md transition-shadow duration-300 hover:shadow-xl"
           >
-            <img src={image.src} alt={image.alt} className="w-full h-auto object-full" />
+            <a href={image.src} target="_blank">
+              <img src={image.src} alt={image.alt} className="w-full h-auto object-full" />
+            </a>
           </div>
         ))}
       </div>
