@@ -69,8 +69,8 @@ export default function StatComponent() {
   }, []); // The empty dependency array ensures this effect runs only once
 
   return (
-    <div className="pb-10 px-4 sm:px-10  md:px-20 lg:px-20">
-      <hr className="pb-10 px-4 sm:px-10  md:px-20 lg:px-20"></hr>
+    <div className="pb-5 px-4 sm:px-10 md:pb-10  md:px-20 lg:px-20">
+      <hr className="pb-5 px-4 sm:px-10  md:px-20 md:py-5 lg:px-20"></hr>
       <h2 className="landing-sub-title pb-5 text-center ">Interesting Stats</h2>
       <div
         ref={statComponentRef}
@@ -118,7 +118,7 @@ export default function StatComponent() {
           </div>
         </div>
       </div>
-      <hr className="pb-10 px-4 sm:px-10  md:px-20 lg:px-20"></hr>
+      <hr className=" px-4 sm:px-10  md:px-20 lg:px-20"></hr>
     </div>
   );
 }

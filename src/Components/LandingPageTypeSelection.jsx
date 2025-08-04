@@ -20,8 +20,9 @@ export default function LandingPageTypeSelection() {
 
   return (
     <div>
-      <h2 className="landing-sub-title pb-5 text-center ">Directory</h2>
-      <div className="flex flex-wrap justify-center gap-4 mb-8 p-4 rounded-lg">
+      <h2 className="landing-sub-title text-center ">Directory</h2>
+      <h3 className="text-center pb-5 ">(pick a category)</h3>
+      <div className="flex flex-wrap justify-center gap-4 mb-5 px-4 rounded-lg md:pb-10">
         {/* NavLinks for each establishment type */}
         {establishmentTypes.map((type) => (
           <NavLink

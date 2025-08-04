@@ -3,7 +3,7 @@
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-  font-size: 50px;
+  font-size: 35px;
 }
 
 .text-shadow-style {
@@ -17,4 +17,10 @@
   font-style: normal;
   font-size: 25px;
   color: orange;
+}
+
+@media (min-width: 600px) {
+  .landing-sub-title {
+    font-size: 50px;
+  }
 }

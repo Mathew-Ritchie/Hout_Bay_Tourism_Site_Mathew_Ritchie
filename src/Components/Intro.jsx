@@ -7,8 +7,8 @@ import sentinelsunset from "../assets/sentinelsunset.jpeg";
 
 export default function Intro() {
   return (
-    <div className="pb-10 px-4 sm:px-10  md:px-20 lg:px-20">
-      <h1 className="text-4xl sm:text-5xl font-extrabold text-center text-gray-900 mb-2 md:mb-4">
+    <div className="pb-5 px-4 sm:px-10  md:px-20 lg:px-20">
+      <h1 className="text-4xl sm:text-5xl xl:text-7xl font-extrabold text-center text-gray-900 mb-2 md:mb-4">
         The Republic
       </h1>
       <h2 className="text-xl sm:text-2xl font-extrabold text-center text-gray-900 mb-2 md:mb-4">
@@ -24,7 +24,7 @@ export default function Intro() {
       <h2 className="landing-sub-title text-xl sm:text-2xl font-extrabold text-center text-gray-900 my-2 md:my-4 ">
         Welcome to the village
       </h2>
-      <hr></hr>
+      <hr className="md:pt-5"></hr>
       <p className="py-5 text-justify">
         <img
           src={harbour03}
@@ -40,7 +40,7 @@ export default function Intro() {
         bustling harbour where colourful fishing boats bob gently and seals playfully vie for
         attention.
       </p>
-      <p className="py-5 text-justify">
+      <p className="pb-5 text-justify">
         <img
           src={sentinelsunset}
           alt="Hout Bay market"
@@ -53,7 +53,7 @@ export default function Intro() {
         unique escape, feeling a world away while remaining conveniently close to the heart of Cape
         Town.
       </p>
-      <p className="py-5 text-justify">
+      <p className="pb-5 text-justify md:pb-10 xl:pb-15">
         Feel free to explore all the establishments Hout Bay has to offer. Whether you're looking
         for a restaurant, a shop, or a service, you'll find a wide variety of options to choose
         from.
