@@ -1,19 +1,20 @@
 // src/store/useEstablishmentStore.js
 import { create } from "zustand";
+import { mockEstablishments } from "../Establishment Data/establishmentData"; // Import the data
 
 // Define your store
 export const useEstablishmentStore = create((set, get) => ({
   // --- State ---
-  allEstablishments: [], // <-- NEW: Stores the full, unfiltered list
-  filteredEstablishments: [], // <-- NEW: Stores the list to be displayed (after filtering)
+  allEstablishments: [],
+  filteredEstablishments: [],
   loading: false,
   error: null,
   message: "",
-  establishmentTypes: [], // Derived from allEstablishments
-  activeTypeFilter: null, // State to store the currently active type filter
+  establishmentTypes: [],
+  activeTypeFilter: null,
   activeCategoryFilter: null,
-  selectedEstablishmentDetails: null, // <-- NEW: State for individual establishment details
-  singleEstablishmentLoading: false, // <-- NEW: Loading state for individual fetch
+  selectedEstablishmentDetails: null,
+  singleEstablishmentLoading: false,
   singleEstablishmentError: null,
   establishmentCategories: [],
   // --- Actions ---
@@ -51,14 +52,10 @@ export const useEstablishmentStore = create((set, get) => ({
     );
   },
 
-  // Internal helper function to apply filters to allEstablishments
-  // This function is called internally by other actions, not directly by components
   _applyClientSideFilters: () => {
-    const { allEstablishments, activeTypeFilter, activeCategoryFilter } = get(); // Get current state from the store
-
+    const { allEstablishments, activeTypeFilter, activeCategoryFilter } = get();
     let currentFiltered = allEstablishments;
 
-    // Apply type filter if active
     if (activeTypeFilter) {
       currentFiltered = currentFiltered.filter(
         (e) => e.type.toLowerCase() === activeTypeFilter.toLowerCase()
@@ -70,44 +67,29 @@ export const useEstablishmentStore = create((set, get) => ({
         (e) => e.category && e.category.includes(activeCategoryFilter)
       );
     }
-    // Add sorting here if needed (e.g., by name)
+
     currentFiltered.sort((a, b) => a.name.localeCompare(b.name));
 
     set({ filteredEstablishments: currentFiltered });
     console.log(
-      `Zustand Store: Applied client-side filter. Active type: ${
+      `Zustand Store: Applied client-side filters. Active type: ${
         activeTypeFilter || "none"
-      }. Displaying ${currentFiltered.length} establishments.`
+      }, Active category: ${activeCategoryFilter || "none"}. Displaying ${
+        currentFiltered.length
+      } establishments.`
     );
   },
 
-  // Async action to initially fetch ALL establishments and populate types
-  // This should ideally be called once on app load (e.g., in LandingPage)
   fetchInitialEstablishments: async () => {
-    set({ loading: true, error: null, message: "Fetching all establishments..." });
+    set({ loading: true, error: null, message: "Loading all establishments from local data..." });
     try {
-      const url = `http://localhost:5173/api/establishments`;
-      console.log(`Zustand Store: Attempting to fetch ALL establishments from: ${url}`);
+      const data = mockEstablishments;
 
-      const response = await fetch(url);
-      console.log("Zustand Store: Fetch response received.", response);
+      const uniqueTypes = [...new Set(data.map((item) => item.type))].filter((type) => type).sort();
 
-      if (!response.ok) {
-        console.error("Zustand Store: Fetch response not OK. Status:", response.status);
-        const errorData = await response
-          .json()
-          .catch(() => ({ message: "No detailed error message" }));
-        throw new Error(`HTTP error! Status: ${response.status} - ${errorData.message}`);
-      }
-      const data = await response.json();
-      console.log("Zustand Store: All data received:", data);
-
-      // Extract unique types from the FULL dataset (for the type buttons)
-      const uniqueTypes = [...new Set(data.map((item) => item.type))].filter((type) => type);
       set({
         allEstablishments: data,
         establishmentTypes: uniqueTypes,
-
         message: `All establishments loaded.`,
         loading: false,
       });
@@ -117,8 +99,8 @@ export const useEstablishmentStore = create((set, get) => ({
     } catch (err) {
       console.error("Zustand Store: Error fetching initial establishments:", err);
       set({
-        error: err.message,
-        message: `Failed to fetch initial establishments: ${err.message}`,
+        error: "Failed to load initial establishments from local data.",
+        message: `Failed to load initial establishments: ${err.message}`,
         loading: false,
       });
     }
@@ -131,24 +113,14 @@ export const useEstablishmentStore = create((set, get) => ({
       selectedEstablishmentDetails: null,
     });
     try {
-      const url = `http://localhost:5173/api/establishments/${id}`;
-      console.log(`Zustand Store: Attempting to fetch individual establishment from: ${url}`);
+      const establishment = mockEstablishments.find((e) => e.id === id);
 
-      const response = await fetch(url);
-      console.log("Zustand Store: Individual fetch response received.", response);
-
-      if (!response.ok) {
-        console.error("Zustand Store: Individual fetch response not OK. Status:", response.status);
-        const errorData = await response
-          .json()
-          .catch(() => ({ message: "No detailed error message" }));
-        throw new Error(`HTTP error! Status: ${response.status} - ${errorData.message}`);
+      if (!establishment) {
+        throw new Error(`Establishment with ID ${id} not found.`);
       }
-      const data = await response.json();
-      console.log("Zustand Store: Individual data received:", data);
 
       set({
-        selectedEstablishmentDetails: data,
+        selectedEstablishmentDetails: establishment,
         singleEstablishmentLoading: false,
         singleEstablishmentError: null,
       });
@@ -163,13 +135,11 @@ export const useEstablishmentStore = create((set, get) => ({
   },
 
   applyTypeFilter: (type) => {
-    set({ activeTypeFilter: type, activeCategoryFilter: null }); // <-- UPDATED: Reset category filter
-    // Now, instead of re-fetching, we apply the filter to the already loaded data
+    set({ activeTypeFilter: type, activeCategoryFilter: null });
     get()._applyClientSideFilters();
     get()._updateCategoriesByFilter();
   },
 
-  // NEW: Action to apply a category filter
   applyCategoryFilter: (category) => {
     set({ activeCategoryFilter: category });
     get()._applyClientSideFilters();
