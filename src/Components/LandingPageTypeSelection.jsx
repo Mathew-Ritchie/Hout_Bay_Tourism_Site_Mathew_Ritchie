@@ -17,7 +17,7 @@ export default function LandingPageTypeSelection() {
 
   return (
     <div>
-      <h2 className="landing-sub-title text-center ">Directory</h2>
+      <h2 className="landing-sub-title text-center ">Establishment Directory</h2>
       <h3 className="text-center pb-5 ">(pick a category)</h3>
       <div className="flex flex-wrap justify-center gap-4 mb-5 px-4 rounded-lg md:pb-10">
         {establishmentTypes.map((type) => (
