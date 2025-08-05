@@ -34,6 +34,12 @@ export default function IndividualEstablishmentPage() {
     }
   }, [id, fetchIndividualEstablishment]); // Re-fetch if ID changes
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollTo(0, 0);
+    }
+  }, [id]);
+
   return (
     <div className="min-h-screen bg-gray-100 py-8 px-4 sm:px-6 lg:px-8 flex flex-col items-center pt-0">
       {selectedEstablishmentDetails && ( // <-- NEW: Conditional rendering for the link
