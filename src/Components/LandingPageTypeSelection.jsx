@@ -8,7 +8,8 @@ export default function LandingPageTypeSelection() {
   const location = useLocation();
 
   const typeBackgrounds = {
-    restaurants: "https://houtbay.typepad.com/.a/6a00d8341cb28553ef014e8af78edf970d-600wi",
+    restaurants:
+      "https://www.chapmanspeakdrive.co.za/media/k2/items/cache/725ab2e5536ce3eac0a8dd17d083ff4e_L.jpg",
     "Health care":
       "https://iol-prod.appspot.com/image/e3eb44afe334c4138b788d6a56cfb3899703db48=w700",
     attractions:
