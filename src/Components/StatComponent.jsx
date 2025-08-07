@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import Currencies from "./Currencies";
 
 export default function StatComponent() {
   // We use a ref to get a direct reference to the component's main container element
@@ -118,6 +119,7 @@ export default function StatComponent() {
           </div>
         </div>
       </div>
+      <Currencies />
       <hr className=" px-4 sm:px-10  md:px-20 lg:px-20"></hr>
     </div>
   );

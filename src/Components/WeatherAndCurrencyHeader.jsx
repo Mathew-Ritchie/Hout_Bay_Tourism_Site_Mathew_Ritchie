@@ -5,7 +5,6 @@ import Currencies from "./Currencies";
 export default function WeatherAndCurrencyHeader() {
   return (
     <div className="w-screen flex justify-end items-center gap-2 pr-10 pt-0 pb-5 hidden lg:flex ">
-      <Currencies />
       <Weather />
     </div>
   );
