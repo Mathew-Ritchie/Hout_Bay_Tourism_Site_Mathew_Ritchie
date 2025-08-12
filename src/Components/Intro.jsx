@@ -21,7 +21,10 @@ export default function Intro() {
           className="w-full max-w-5xl h-auto rounded-lg shadow-lg"
         />
       </div>
-      <h2 className="landing-sub-title text-xl sm:text-2xl font-extrabold text-center text-gray-900 my-2 md:my-4 ">
+      <h2
+        className="landing-sub-title text-xl sm:text-2xl font-extrabold text-center text-gray-900 my-2 md:my-4 "
+        id="intro-message"
+      >
         Welcome to the village
       </h2>
       <hr className="md:pt-5"></hr>

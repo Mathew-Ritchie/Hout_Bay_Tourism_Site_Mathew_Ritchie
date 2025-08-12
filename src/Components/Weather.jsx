@@ -52,14 +52,11 @@ export default function Weather() {
   const iconUrl = `https://openweathermap.org/img/wn/${weatherIconCode}@2x.png`;
 
   return (
-    <div className="flex flex-col items-end justify-cente ">
-      {/* <h3 className="text-xl font-semibold text-gray-800 mb-2">Current Weather</h3> */}
-      <div className="flex items-center gap-2 bg-gray-300 px-4 rounded-2xl mt-2 shadow-lg ">
+    <div className="flex flex-col items-end justify-cente">
+      <div className="flex items-center gap-2 bg-gray-300 px-4 rounded-2xl mt-2 shadow-lg mr-2">
         <img src={iconUrl} alt={weatherDescription} className="w-14 h-14" />
         <p className="text-3xl font-bold  text-gray-800  ">{Math.round(temperature)}°C</p>
       </div>
-      {/* <p className="text-gray-700 capitalize">{weatherDescription}</p> */}
-      {/* <p className="text-sm text-gray-500 mt-1">Hout Bay</p> */}
     </div>
   );
 }

@@ -70,7 +70,7 @@ export default function StatComponent() {
   }, []); // The empty dependency array ensures this effect runs only once
 
   return (
-    <div className="pb-5 px-4 sm:px-10 md:pb-10  md:px-20 lg:px-20">
+    <div className="pb-5 px-4 sm:px-10 md:pb-10  md:px-20 lg:px-20" id="interesting-stats">
       <hr className="pb-5 px-4 sm:px-10  md:px-20 md:py-5 lg:px-20"></hr>
       <h2 className="landing-sub-title pb-5 text-center ">Interesting Stats</h2>
       <div

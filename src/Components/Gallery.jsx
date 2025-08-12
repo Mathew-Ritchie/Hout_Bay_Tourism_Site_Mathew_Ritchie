@@ -22,7 +22,7 @@ export default function Gallery() {
   ];
 
   return (
-    <div className="pb-5 px-4 md:px-10 lg:px-20 bg-gray-100 md:pb-10">
+    <div className="pb-5 px-4 md:px-10 lg:px-20 bg-gray-100 md:pb-10" id="picture-gallery">
       <h2 className="landing-sub-title text-3xl font-extrabold text-center text-gray-900 mb-5">
         Hout Bay in Pictures
       </h2>

@@ -1,3 +1,7 @@
+* {
+  scroll-behavior: smooth;
+}
+
 .landing-sub-title {
   font-family: "Dancing Script", cursive;
   font-optical-sizing: auto;
