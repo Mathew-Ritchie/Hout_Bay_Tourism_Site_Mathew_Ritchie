@@ -1,3 +1,8 @@
+import bayHarbourMarketImage from "../assets/bay-harbour-market.jpg";
+import casareccio from "../assets/casareccio.webp";
+import marinersWharf from "../assets/mariners-wharf.jpg";
+import beachBar from "../assets/beach-bar.jpg";
+
 export const mockEstablishments = [
   {
     id: "r1",
@@ -10,10 +15,10 @@ export const mockEstablishments = [
     phoneNumber: "+27 21 790 1100",
     website: "https://www.marinerswharf.co.za/",
     rating: 4.5,
-    imageUrl:
-      "https://scontent-cpt1-1.xx.fbcdn.net/v/t39.30808-6/309435076_520494470082995_6572981777692265792_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=FOec8xyGbGAQ7kNvwERU_8f&_nc_oc=AdmNGYm2uifXl-PPfCoDyQORTLSC8wZZc38R4HGYwjXRcE3Knb6ZO8t5WhihXIG1Op0&_nc_zt=23&_nc_ht=scontent-cpt1-1.xx&_nc_gid=7lm9wztN5rCvyxL-7GzP-A&oh=00_AfTVu-J9Tk-3stcMkJOdHgg4DmLtkIYOPDlXWiI7Nufkfw&oe=68892C5E",
+    imageUrl: marinersWharf,
+    imageCredit: "Image from Mariner's Wharf Tripadvisor page",
     description: [
-      `Mariner's Wharf stands as Africa's first harbourfront emporium, a truly unique destination. 
+      `Mariner's Wharf stands as Africa's first harbour front emporium, a truly unique destination. 
       Conceived by local visionary Stanley Dorman and opened in 1984, it's a vibrant hub that masterfully blend
       a working fishing harbour with an engaging tourist attraction.`,
       `Visitors are immersed in a maritime ambiance, evident from the fresh fish market built around the hull of 
@@ -180,8 +185,8 @@ export const mockEstablishments = [
     phoneNumber: "+27 21 180 2556",
     website: "https://www.thebeachbarhoutbay.co.za/",
     rating: 4.3,
-    imageUrl:
-      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq-lLk5wV_CSz5nTCcx22v73n-mMYJ1KuV7Ps9SPQEiqurSqn7nTnnYn5XY2e91rC66yGFUWPEwhFbSspG-qvYlEfyQ040CVFkansmu_eQftosuQAyHNB0gr-WJTGMg3ZB88k0f=s680-w680-h510-rw",
+    imageUrl: beachBar,
+    imageCredit: "Image from The Beach Bar Facebook page",
     description: [
       `The Beach Bar in Hout Bay offers an elevated beachfront dining experience right on the sand,
         boasting breathtaking views of the Atlantic Ocean and the majestic Chapman's Peak. It's a
@@ -339,8 +344,8 @@ export const mockEstablishments = [
     phoneNumber: "+27 21 790 0200",
     website: "https://casarecciohoutbay.co.za/home",
     rating: 4.5,
-    imageUrl:
-      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noHZXYrh4_L9u-2tlKVuAFsFSuq0jaRO78gHUyLwAicorNnpebuTTOrMwUVSCW_EyGIx3c4UXpU6xrF_nsWcp1fYHHkB37oPkqlveg2XdnsKe8iHNwla8BwJydru2Qda2v3a-WOBQ=s680-w680-h510-rw",
+    imageUrl: casareccio,
+    imageCredit: "Photo by Casareccio Cucina Italiana",
     description: [
       `Casareccio Cucina Italiana, located at 4 Main Road in Hout Bay, is a beloved Italian restaurant that warmly embraces its customers as family. This eatery is known for its authentic Italian cuisine with a delightful hint of Portuguese influence, creating a unique and inviting dining experience`,
       `Open daily, Casareccio prides itself on serving delicious breakfasts to start the day, alongside an impressive array of classic Italian favorites. Their menu features amazing pizzas with traditional toppings, perfectly cooked pastas made with passion, and a selection of favorite Portuguese meals. Beyond these staples, they also offer delicious specialty dishes, ensuring there's something to tempt every palate`,
@@ -441,8 +446,8 @@ export const mockEstablishments = [
     email: "info@bayharbour.co.za",
     website: "https://www.bayharbour.co.za/",
     rating: 4.4,
-    imageUrl:
-      "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrqGrBmB0pXcQva7JFhs2319uvVjE4jhg6lFqcBvTrbrdtb6zCe5mhAaVRSAGAxEQxl6JQN_YP0Oc8zJh71XVpfRSYASrZARx9ESXG2Agy-HCO3yZrnwk-c1UAqBNnfdRe96HbJ=s1360-w1360-h1020-rw",
+    imageUrl: bayHarbourMarketImage,
+    imageCredit: "Image from Bay Harbour Market",
     Description: "",
   },
   {
