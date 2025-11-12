@@ -1,6 +1,9 @@
 // src/store/useEstablishmentStore.js
 import { create } from "zustand";
-import { mockEstablishments } from "../Establishment Data/establishmentData"; // Import the data
+//import { mockEstablishments } from "../Establishment Data/establishmentData"; // Import the data
+
+// API
+const API_BASE_URL = "https://houtbay-establishments-api.onrender.com/api/establishments";
 
 // Define your store
 export const useEstablishmentStore = create((set, get) => ({
@@ -80,31 +83,38 @@ export const useEstablishmentStore = create((set, get) => ({
     );
   },
 
+  // Fetch initial establishments from the API
   fetchInitialEstablishments: async () => {
-    set({ loading: true, error: null, message: "Loading all establishments from local data..." });
+    set({ loading: true, error: null, message: "Fetching establishments from API..." });
     try {
-      const data = mockEstablishments;
+      const response = await fetch(API_BASE_URL);
+      if (!response.ok) {
+        throw new Error(`API request failed with status ${response.status}`);
+      }
+      const data = await response.json();
 
       const uniqueTypes = [...new Set(data.map((item) => item.type))].filter((type) => type).sort();
 
       set({
         allEstablishments: data,
         establishmentTypes: uniqueTypes,
-        message: `All establishments loaded.`,
+        message: `All establishments loaded from API.`,
         loading: false,
       });
 
       get()._applyClientSideFilters();
       get()._updateCategoriesByFilter();
     } catch (err) {
-      console.error("Zustand Store: Error fetching initial establishments:", err);
+      console.error("Zustand Store: Error fetching from API:", err);
       set({
-        error: "Failed to load initial establishments from local data.",
-        message: `Failed to load initial establishments: ${err.message}`,
+        error: "Failed to fetch establishments from API.",
+        message: `Failed to fetch: ${err.message}`,
         loading: false,
       });
     }
   },
+
+  // Fetch individual establishment details by ID
 
   fetchIndividualEstablishment: async (id) => {
     set({
@@ -113,11 +123,11 @@ export const useEstablishmentStore = create((set, get) => ({
       selectedEstablishmentDetails: null,
     });
     try {
-      const establishment = mockEstablishments.find((e) => e.id === id);
-
-      if (!establishment) {
-        throw new Error(`Establishment with ID ${id} not found.`);
+      const response = await fetch(`${API_BASE_URL}/${id}`);
+      if (!response.ok) {
+        throw new Error(`API request failed with status ${response.status}`);
       }
+      const establishment = await response.json();
 
       set({
         selectedEstablishmentDetails: establishment,

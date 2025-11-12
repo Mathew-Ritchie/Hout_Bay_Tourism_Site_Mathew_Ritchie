@@ -72,11 +72,20 @@ export default function IndividualEstablishmentPage() {
         <div className="bg-white rounded-lg shadow-xl p-6 sm:p-8 max-w-2xl w-full inline-flex flex-col justify-center items-start">
           {selectedEstablishmentDetails.imageUrl && (
             <img
-              src={selectedEstablishmentDetails.imageUrl}
+              src={
+                selectedEstablishmentDetails.imageUrl.startsWith("http")
+                  ? selectedEstablishmentDetails.imageUrl
+                  : `https://houtbay-establishments-api.onrender.com/images/${selectedEstablishmentDetails.imageUrl}`
+              }
               alt={selectedEstablishmentDetails.name}
               className="w-full h-64 object-cover object-center rounded-lg mb-6"
+              //onError={(e) => {
+              // Optional: fallback if the image fails to load
+              //  e.target.src = "/fallback-image.jpg"; // put a local fallback in /public if you want
+              // }}
             />
           )}
+
           <h2 className="text-center text-3xl font-bold text-gray-900 mb-4">
             {selectedEstablishmentDetails.name}
           </h2>

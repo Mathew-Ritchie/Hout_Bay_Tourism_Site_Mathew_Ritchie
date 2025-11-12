@@ -23,13 +23,23 @@ export default function EstablishmentCards({ establishments, loading, error, mes
               {/* UPDATED: NavLink now points to the correct details page URL and has a better class */}
               <NavLink to={`/${establishment.id}`}>
                 {/* Image */}
+
                 {establishment.imageUrl && (
                   <img
-                    src={establishment.imageUrl}
+                    src={
+                      establishment.imageUrl.startsWith("http")
+                        ? establishment.imageUrl
+                        : `https://houtbay-establishments-api.onrender.com/images/${establishment.imageUrl}`
+                    }
                     alt={establishment.name}
-                    className="w-full h-48 object-cover object-center"
+                    className="w-full h-64 object-cover object-center rounded-lg mb-6"
+                    onError={(e) => {
+                      // Optional: fallback if the image fails to load
+                      e.target.src = "/fallback-image.jpg"; // put a local fallback in /public if you want
+                    }}
                   />
                 )}
+
                 {/* Title */}
                 <div className="p-4 inline-flex flex-col justify-between items-start h-54 w-full">
                   <div className="w-full">
