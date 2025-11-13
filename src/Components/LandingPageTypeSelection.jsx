@@ -3,17 +3,20 @@ import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useEstablishmentStore } from "../store/useEstablishmentStore";
 
+import restaurant from "../assets/fishandchips.jpg";
+import healthCare from "../assets/healthcare.jpg";
+import attractions from "../assets/sealisland.jpg";
+import beaches from "../assets/beach_hout_bay.jpg";
+
 export default function LandingPageTypeSelection() {
   const establishmentTypes = useEstablishmentStore((state) => state.establishmentTypes);
   const location = useLocation();
 
   const typeBackgrounds = {
-    restaurants:
-      "https://www.chapmanspeakdrive.co.za/media/k2/items/cache/725ab2e5536ce3eac0a8dd17d083ff4e_L.jpg",
-    "Health care":
-      "https://iol-prod.appspot.com/image/e3eb44afe334c4138b788d6a56cfb3899703db48=w700",
-    attractions:
-      "https://www.chapmanspeakdrive.co.za/media/k2/items/cache/a522a6005d1cb428ea34ef1769cd7452_L.jpg",
+    restaurants: restaurant,
+    "Health care": healthCare,
+    attractions: attractions,
+    beaches: beaches,
   };
 
   return (
