@@ -133,7 +133,7 @@ export default function IndividualEstablishmentPage() {
               : "N/A"}
           </p>
 
-          <div className="inline-flex justify-center items-center gap-2 pt-5">
+          <div className="inline-flex justify-center flex-wrap items-center gap-2 pt-5">
             {selectedEstablishmentDetails.website && (
               <p className="w-fit px-4 py-2 rounded-full text-sm font-medium shadow-md transition-colors duration-200 bg-gray-300 text-gray-800 hover:bg-gray-400">
                 {/* <strong>Website:</strong>{" "} */}
