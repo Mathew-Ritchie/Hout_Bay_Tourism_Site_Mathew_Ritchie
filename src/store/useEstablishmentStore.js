@@ -3,7 +3,7 @@ import { create } from "zustand";
 //import { mockEstablishments } from "../Establishment Data/establishmentData"; // Import the data
 
 // API
-const API_BASE_URL = "https://houtbay-establishments-api.onrender.com/api/establishments";
+const API_BASE_URL = "https://houtbay-api.onrender.com/api/establishments";
 
 // Define your store
 export const useEstablishmentStore = create((set, get) => ({
