@@ -29,7 +29,7 @@ export default function EstablishmentCards({ establishments, loading, error, mes
                     src={
                       establishment.imageUrl.startsWith("http")
                         ? establishment.imageUrl
-                        : `https://houtbay-establishments-api.onrender.com/images/${establishment.imageUrl}`
+                        : `https://houtbay-api.onrender.com/images/${establishment.imageUrl}`
                     }
                     alt={establishment.name}
                     className="w-full h-64 object-cover object-center rounded-lg mb-6"

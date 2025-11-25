@@ -75,7 +75,7 @@ export default function IndividualEstablishmentPage() {
               src={
                 selectedEstablishmentDetails.imageUrl.startsWith("http")
                   ? selectedEstablishmentDetails.imageUrl
-                  : `https://houtbay-establishments-api.onrender.com/images/${selectedEstablishmentDetails.imageUrl}`
+                  : `https://houtbay-api.onrender.com/images/${selectedEstablishmentDetails.imageUrl}`
               }
               alt={selectedEstablishmentDetails.name}
               className="w-full h-64 object-cover object-center rounded-lg mb-6"
