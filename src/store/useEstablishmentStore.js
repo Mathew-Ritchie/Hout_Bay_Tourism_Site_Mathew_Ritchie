@@ -169,7 +169,7 @@ export const useEstablishmentStore = create((set, get) => ({
   //     });
   //   }
   // },
-
+  //abcd
   fetchIndividualEstablishment: (id) => {
     set({
       singleEstablishmentLoading: true,
