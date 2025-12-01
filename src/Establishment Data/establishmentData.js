@@ -1,9 +1,5 @@
-import bayHarbourMarketImage from "../assets/bay-harbour-market.jpg";
-import casareccio from "../assets/casareccio.webp";
-import marinersWharf from "../assets/mariners-wharf.jpg";
-import beachBar from "../assets/beach-bar.jpg";
-
-export const mockEstablishments = [
+const establishments = [
+  //Restaurants -----------------------------------------------------------------------------------------
   {
     id: "r1",
     name: "Mariner's Wharf",
@@ -15,7 +11,7 @@ export const mockEstablishments = [
     phoneNumber: "+27 21 790 1100",
     website: "https://www.marinerswharf.co.za/",
     rating: 4.5,
-    imageUrl: marinersWharf,
+    imageUrl: "/mariners_wharf.jpg",
     imageCredit: "Image from Mariner's Wharf Tripadvisor page",
     description: [
       `Mariner's Wharf stands as Africa's first harbour front emporium, a truly unique destination. 
@@ -41,8 +37,7 @@ export const mockEstablishments = [
     phoneNumber: "+27 21 790 1876",
     website: "http://www.dunesouthbay.co.za",
     rating: 4.2,
-    imageUrl:
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/7c/52/e3/dunes-beach-restaurant.jpg?w=900&h=500&s=1",
+    imageUrl: "/dunes.jpg",
     description: [
       `Dunes Beach Restaurant, ideally situated directly on Hout Bay Beach, offers an unparalleled coastal dining 
         experience. Boasting breathtaking panoramic views of Chapman's Peak, the Sentinel, and the expansive beach, 
@@ -67,8 +62,7 @@ export const mockEstablishments = [
     phoneNumber: "+27 21 790 5648",
     website: "http://www.massimos.co.za",
     rating: 4.8,
-    imageUrl:
-      "https://www.houtbaytourism.com/images/stories/virtuemart/product/IMG_1196-scaled.jpg",
+    imageUrl: "/massimos.jpg",
     description: [
       `Massimo's, nestled in Hout Bay's Oakhurst Farm Park, is a celebrated Italian restaurant renowned for its
          authentic wood-fired pizzas and homemade pasta. Owned by Massimo and Tracy Orione, it's a true slice of 
@@ -96,7 +90,7 @@ export const mockEstablishments = [
     phoneNumber: "+27 21 790 1036",
     website: "http://www.chapmanspeakhotel.co.za",
     rating: 4.6,
-    imageUrl: "https://www.sa-venues.com/visit/chapmanspeakhotel/10g.jpg",
+    imageUrl: "/chapmanspeak_hotel.jpg",
     description: [
       `The Chapman's Peak Hotel Restaurant, a cherished Hout Bay institution for over 25 years, stands
         majestically at the foot of the iconic Chapman's Peak Drive. It's often hailed as the "grand old lady"
@@ -126,8 +120,7 @@ export const mockEstablishments = [
     phoneNumber: "+27 21 791 0021",
     website: "https://www.darioscafe.com/",
     rating: 4.1,
-    imageUrl:
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/b1/9b/ac/a-fresh-start-a-new-day.jpg?w=900&h=500&s=1",
+    imageUrl: "/darios.jpg",
     description: [
       `Dario's Café is a beloved Italian eatery owned by an authentic Italian couple, offering a true taste
           of Italy with a warm, family-like embrace. This popular spot masterfully combines a vibrant coffee
@@ -155,8 +148,7 @@ export const mockEstablishments = [
     phoneNumber: "+27 21 790 0001",
     website: "https://fishontherocks.com/",
     rating: 4.3,
-    imageUrl:
-      "https://fireflythetravelguy.travel.blog/wp-content/uploads/2012/04/ddd78-2012_01040306.jpg",
+    imageUrl: "/fish_on_the_rocks.jpg",
     description: [
       `Fish on the Rocks, located at the far end of Harbour Road in Hout Bay, is an iconic, bustling seafood
         institution renowned for its fresh fish and chips and unparalleled views. Situated right on the edge
@@ -185,7 +177,7 @@ export const mockEstablishments = [
     phoneNumber: "+27 21 180 2556",
     website: "https://www.thebeachbarhoutbay.co.za/",
     rating: 4.3,
-    imageUrl: beachBar,
+    imageUrl: "/beach_bar.jpg",
     imageCredit: "Image from The Beach Bar Facebook page",
     description: [
       `The Beach Bar in Hout Bay offers an elevated beachfront dining experience right on the sand,
@@ -213,8 +205,7 @@ export const mockEstablishments = [
     phoneNumber: "+27 21 790 0900",
     website: "https://www.lookouthoutbay.co.za/",
     rating: 4.2,
-    imageUrl:
-      "https://www.lookouthoutbay.co.za/wp-content/uploads/2024/01/Lookout-Deck-Drone-copy-1.jpg",
+    imageUrl: "/lookout_deck.jpg",
     description: [
       `The Lookout Hout Bay, perched dramatically on the water's edge in Hout Bay Harbour,
         boasts arguably one of the most spectacular views in the Western Cape, encompassing
@@ -246,8 +237,7 @@ export const mockEstablishments = [
     phoneNumber: "+27 60 756 5183",
     website: "https://www.thepelican.co.za/",
     rating: 4.4,
-    imageUrl:
-      "https://lh3.googleusercontent.com/p/AF1QipM5vUyjL0KXM_RNnXZRBM_qa9We3gyjSd89bM7R=s680-w680-h510-rw",
+    imageUrl: "/the_pelican.jpg",
     description: [
       `The Pelican in Hout Bay is a relaxed and friendly restaurant and creperie, with a strong 
         emphasis on excellent coffee and exceptional food. Located conveniently on Victoria Avenue, 
@@ -277,8 +267,7 @@ export const mockEstablishments = [
     phoneNumber: "+27 21 790 5324",
     website: "https://www.facebook.com/delishbistroHB/",
     rating: 4.6,
-    imageUrl:
-      "https://lh3.googleusercontent.com/p/AF1QipMBpyhhoLDoOD2hvsBHUPjn91hO9uIOALEuSxxE=s680-w680-h510-rw",
+    imageUrl: "/delish.jpg",
     description: [
       `Delish Restaurant, a charming eatery in Hout Bay, is a true "home away from home" for locals 
         and a delightful find for visitors. Run by a hands-on mother and daughter team, it's housed 
@@ -307,7 +296,7 @@ export const mockEstablishments = [
     phoneNumber: "+27 61 911 5690",
     website: "https://veldtdbe.com/",
     rating: 4.5,
-    imageUrl: "https://www.dining-out.co.za/ftp/gallery/11613--48012.jpg",
+    imageUrl: "/veldt.jpg",
     description: [
       `Veldt Braai Restaurant & Smoke House in Hout Bay is a unique eatery that reimagines South African food traditions with a focus on wood-fired and smoked dishes. This establishment celebrates the essence of "braai" (barbecue) culture, using locally sourced, organic, and grass-fed meats to craft truly authentic flavors.`,
       `The atmosphere is a blend of relaxed rustic charm and modern sleek design, making it appealing for casual diners, families, or even more elegant small parties and private events. Guests can indulge in premium cuts like Karoo lamb, expertly grilled and smoked. To complement the culinary offerings, Veldt boasts a curated selection of local beers on tap and boutique wines from small farms. Beyond the main dishes, the menu also features gourmet burgers, light meals, and other South African-inspired fare.`,
@@ -325,8 +314,7 @@ export const mockEstablishments = [
     phoneNumber: "+27 84 363 6888",
     website: null,
     rating: 4.1,
-    imageUrl:
-      "https://lh3.googleusercontent.com/p/AF1QipP-Oo1qIcmIirfxP_2CR5vf--6sqgdaRg1gyAYY=s680-w680-h510-rw",
+    imageUrl: "pho_hue_vietnamese.jpg",
     description: [
       `Pho Hue Vietnamese, located on Victoria Avenue in Hout Bay, brings the authentic and vibrant flavors of Vietnam to the Cape Peninsula. This popular eatery is known for its dedication to traditional Vietnamese street food, offering a culinary journey that transports diners straight to the bustling markets of Hanoi or Ho Chi Minh City.`,
       `The star of the show, as the name suggests, is their selection of Pho – rich, aromatic noodle soups available with beef or chicken, prepared with slow-cooked broths that capture the essence of Vietnamese comfort food. Beyond Pho, the menu features a diverse range of Vietnamese delights. Expect to find fresh and crispy spring rolls, both fresh and fried, with various fillings like prawn, chicken, and vegetables. Their Banh Mi (Vietnamese sandwiches) are a popular choice, boasting flavorful fillings in crusty baguettes. Other highlights include delicious dumplings, Korean Fried Chicken wings, and a variety of rice and noodle dishes.`,
@@ -344,7 +332,7 @@ export const mockEstablishments = [
     phoneNumber: "+27 21 790 0200",
     website: "https://casarecciohoutbay.co.za/home",
     rating: 4.5,
-    imageUrl: casareccio,
+    imageUrl: "/casareccio.webp",
     imageCredit: "Photo by Casareccio Cucina Italiana",
     description: [
       `Casareccio Cucina Italiana, located at 4 Main Road in Hout Bay, is a beloved Italian restaurant that warmly embraces its customers as family. This eatery is known for its authentic Italian cuisine with a delightful hint of Portuguese influence, creating a unique and inviting dining experience`,
@@ -363,14 +351,14 @@ export const mockEstablishments = [
     phoneNumber: "+27 21 300 0282",
     website: null,
     rating: 4.4,
-    imageUrl:
-      "https://lh3.googleusercontent.com/p/AF1QipPJufto3m-BXoi5bJN8PQiyWHxnHEFeDdXFX8vZ=s680-w680-h510-rw",
+    imageUrl: "/butchers_mermaid.jpg",
     description: [
       `The Butcher's Mermaid in Hout Bay is a unique culinary destination that operates as both a modern, upscale butcher and deli, and a restaurant. Their philosophy revolves around providing top-quality, locally sourced, pasture-reared, free-range meat products and the finest charcuterie, drawing inspiration from European butcheries.`,
       `Beyond their premium meat counter, which includes dry-aged options, they emphasize sustainable seafood, offering seasonal live oysters, mussels, and crayfish that can be prepared á la minute or packed for convenience. Vegetables are sourced from farms adhering to organic principles.`,
       `The restaurant, with its stylish yet comfortable ambiance, offers a diverse menu that goes beyond just meat. While their steaks (including Wagyu and various cuts prepared on a hot stone at your table) and gourmet burgers are highlights, they also serve light meals, salads, and have a selection of Belgian-inspired dishes like bitterballen. They pride themselves on attentive service and a welcoming environment, making it a popular spot for both meat connoisseurs and those seeking fresh, quality ingredients in a sophisticated setting.`,
     ],
   },
+  //Health care -----------------------------------------------------------------------------------------
   {
     id: "p1",
     name: "Clicks Pharmacy Hout Bay",
@@ -383,8 +371,8 @@ export const mockEstablishments = [
     email: null,
     website: "https://www.clicks.co.za",
     rating: 2.7,
-    imageUrl: "https://pargo.co.za/wp-content/uploads/2022/09/Top-PUP-blog-image-format.png",
-    Description: "",
+    imageUrl: "/clicks.jpeg",
+    description: "",
   },
   {
     id: "p2",
@@ -398,9 +386,8 @@ export const mockEstablishments = [
     email: "rxwheelers@mweb.co.za",
     website: "https://www.wheelerspharmacy.com/",
     rating: 3.8,
-    imageUrl:
-      "https://images.squarespace-cdn.com/content/v1/5ea6b27006ea3b72b5d608f9/1587986162644-0C3KPY51FTN2FY9224BC/WheelersBG1.png",
-    Description: "",
+    imageUrl: "/wheelers.webp",
+    description: "",
   },
   {
     id: "p3",
@@ -414,10 +401,10 @@ export const mockEstablishments = [
     email: "rxsentinel@mweb.co.za",
     website: "https://www.wheelerspharmacy.com/general-6",
     rating: 4.1,
-    imageUrl:
-      "https://www.club790businessdirectory.co.za/wp-content/uploads/2020/07/Sentinal-Pharmacy-image-2.jpg",
-    Description: "",
+    imageUrl: "/sentinal_pharmacy.jpg",
+    description: "",
   },
+  //Attractions -----------------------------------------------------------------------------------------
   {
     id: "a1",
     name: "World of Birds Wildlife Sanctuary & Monkey Park",
@@ -430,9 +417,17 @@ export const mockEstablishments = [
     email: "info@worldofbirds.co.za",
     website: "https://worldofbirds.co.za/",
     rating: 4.2,
-    imageUrl:
-      "https://i.ytimg.com/vi/3M8TqVrBeoA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB_FG29yO0OSkkCcSEMEavCYOldIA",
-    Description: "",
+    imageUrl: "/world_of_birds.jpeg",
+    description: [
+      `World of Birds in Hout Bay is one of Africa’s largest bird parks and a 
+    must-visit for nature lovers. Home to over 3,000 birds across more than 400 species,
+     as well as small mammals like monkeys, meerkats, and porcupines, it offers an 
+     immersive wildlife experience for visitors of all ages. The park features walk-through
+      aviaries, lush gardens, and interactive feeding sessions, allowing guests to get 
+      up close to exotic and indigenous species. Nestled in a scenic setting with the
+       backdrop of Table Mountain and Hout Bay, World of Birds combines education,
+        conservation, and family-friendly fun, making it a top attraction in Cape Town.`,
+    ],
   },
   {
     id: "a2",
@@ -446,59 +441,22 @@ export const mockEstablishments = [
     email: "info@bayharbour.co.za",
     website: "https://www.bayharbour.co.za/",
     rating: 4.4,
-    imageUrl: bayHarbourMarketImage,
+    imageUrl: "/bay_harbour_market.jpg",
     imageCredit: "Image from Bay Harbour Market",
-    Description: "",
+    description: [
+      `The Bay Harbour Market in Hout Bay is a vibrant, must-visit destination
+     for locals and tourists alike. Set in a lively, eclectic space near the harbour,
+      the market showcases a diverse mix of artisanal crafts, unique gifts, and handmade
+       jewellery, alongside an array of global cuisine from food stalls and pop-up eateries.
+        Live music and entertainment create a festive atmosphere, making it a social hotspot
+         as well as a shopping destination. With stunning views of Hout Bay Harbour and the
+          surrounding mountains, the market perfectly combines culture, creativity, and
+          community, offering visitors an authentic taste of Cape Town’s local life.`,
+    ],
   },
+
   {
     id: "a3",
-    name: "Hout Bay Beach",
-    tradingHours: null,
-    location: null,
-    address: null,
-    category: ["Beach", "Swimming", "Walking"],
-    type: "attractions",
-    phoneNumber: null,
-    email: null,
-    website: null,
-    rating: null,
-    imageUrl: "https://www.capetown.travel/wp-content/uploads/Beach-in-hout-bay.jpg",
-    Description: "",
-  },
-  {
-    id: "a4",
-    name: "Sandy Bay Beach",
-    tradingHours: null,
-    location: null,
-    address: null,
-    category: ["Beach", "Swimming", "Walking"],
-    type: "attractions",
-    phoneNumber: null,
-    email: null,
-    website: null,
-    rating: null,
-    imageUrl:
-      "https://www.booknow.co.za/storage/app/uploads/public/67f/ce4/518/67fce45185b07655963955.jpg",
-    Description: "",
-  },
-  {
-    id: "a5",
-    name: "Llandudno Beach",
-    tradingHours: null,
-    location: null,
-    address: null,
-    category: ["Beach", "Swimming", "Walking"],
-    type: "attractions",
-    phoneNumber: null,
-    email: null,
-    website: null,
-    rating: null,
-    imageUrl:
-      "https://secretcapetown.co.za/wp-content/uploads/2022/01/Llandudno-Beach-Sunny-Day.jpg",
-    Description: "",
-  },
-  {
-    id: "a6",
     name: "Chapman's peak drive",
     tradingHours: null,
     location: null,
@@ -509,11 +467,22 @@ export const mockEstablishments = [
     email: "info@chapmanspeakdrive.co.za",
     website: "https://www.chapmanspeakdrive.co.za/",
     rating: null,
-    imageUrl: "https://bicyclesouth.co.za/wp-content/uploads/2018/05/cycle-tour-364-3.jpg",
-    Description: "",
+    imageUrl: "/chapmans_peak_drive.jpg",
+    description: [
+      `Chapman’s Peak Drive is one of the world’s most breathtaking
+      coastal routes, winding along the cliffs between Hout Bay and Noordhoek on
+      Cape Town’s Atlantic Coast. Carved into the mountainside, the road offers
+      spectacular panoramic views of the ocean, rugged cliffs, and dramatic mountain 
+      scenery. Known locally as “Chappies,” it’s a favourite for scenic drives, 
+      cycling, and sunset picnics. With several lookout points along its 9-kilometre
+      stretch, it’s perfect for photography and whale watching in season.
+      Combining engineering brilliance with natural beauty, Chapman’s Peak Drive
+      is an iconic Cape Town experience that captures the essence of the Cape
+      Peninsula’s wild charm.`,
+    ],
   },
   {
-    id: "a7",
+    id: "a4",
     name: "Hout Bay Harbour",
     tradingHours: null,
     location: null,
@@ -524,11 +493,21 @@ export const mockEstablishments = [
     email: "info@chapmanspeakdrive.co.za",
     website: "https://www.chapmanspeakdrive.co.za/",
     rating: null,
-    imageUrl: "https://daytrippers.co.za/wp-content/uploads/2018/10/Hout-Bay-Harbour.png",
-    Description: "",
+    imageUrl: "/hout_bay_harbour.jpeg",
+    description: [
+      `Hout Bay Harbour is a vibrant and historic seaside attraction
+     nestled at the foot of the Sentinel Peak in Cape Town. Originally a small
+      fishing harbour, it has grown into a lively hub where visitors can enjoy a 
+      mix of local culture, fresh seafood, and ocean adventures. The harbour is home
+       to colourful fishing boats, bustling markets, and the popular Bay Harbour 
+       Market, offering local crafts, music, and food. Boat trips to Seal Island
+        and deep-sea fishing excursions depart daily, adding to its appeal.
+         Surrounded by stunning mountain and ocean views, Hout Bay Harbour
+          perfectly blends charm, activity, and natural beauty.`,
+    ],
   },
   {
-    id: "a8",
+    id: "a5",
     name: "Animal Ocean",
     tradingHours: null,
     location: null,
@@ -539,12 +518,21 @@ export const mockEstablishments = [
     email: "info@animalocean.co.za",
     website: "https://www.animalocean.co.za/",
     rating: null,
-    imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMpr0CKggUYUrRiEjTMH-Xb-NyuwGcmgZwvw&s",
-    Description: "",
+    imageUrl: "/animal_ocean.jpeg",
+    description: [
+      `Animal Ocean Ocean Safaris, based in Hout Bay, offers unforgettable marine
+     adventures along Cape Town’s stunning coastline. Specializing in boat tours, the safaris
+      allow visitors to experience the ocean up close, with opportunities to see seals, 
+      dolphins, whales, and even penguins in their natural habitats. Guided by experienced 
+      marine specialists, the tours combine wildlife spotting with fascinating insights into
+       marine ecology and conservation. Whether it’s a scenic cruise along Hout Bay, a seal
+        island visit, or a seasonal whale-watching expedition, Animal Ocean Ocean Safaris
+         delivers a thrilling and educational experience, making it a top choice for ocean 
+         lovers visiting Cape Town.`,
+    ],
   },
   {
-    id: "a9",
+    id: "a6",
     name: "Drumbeat Charters",
     tradingHours: null,
     location: null,
@@ -555,11 +543,21 @@ export const mockEstablishments = [
     email: "hello@drumbeatcharters.co.za",
     website: "https://www.animalocean.co.za/",
     rating: 4.4,
-    imageUrl: "https://drumbeatcharters.co.za/wp-content/uploads/2024/10/drumbeat-vessel.jpg",
-    Description: "",
+    imageUrl: "/drumbeat_charters.png",
+    description: [
+      `Drumbeat Charters in Hout Bay offers an unforgettable maritime experience along
+     Cape Town’s stunning coastline. Operating from the harbour, their scenic cruises take visitors 
+     to Duiker Island, home to thousands of wild Cape Fur Seals, and along the dramatic cliffs of
+      Chapman’s Peak. Options include relaxed sightseeing trips, high-speed eco-adventures, and 
+      special excursions to shipwrecks, all guided by knowledgeable staff. The purpose-built 
+      vessel is safe, comfortable, and family-friendly, with indoor and outdoor seating. Combining 
+      wildlife encounters, breathtaking ocean views, and the thrill of the Atlantic, Drumbeat
+       Charters is a must-visit attraction for anyone seeking adventure and natural beauty in
+        Cape Town.`,
+    ],
   },
   {
-    id: "a10",
+    id: "a7",
     name: "Karbonkelberg Tourism",
     tradingHours: "Mon-Fri 09:00-17:00, Sat-Sun 09:00-12:00",
     location: null,
@@ -570,8 +568,98 @@ export const mockEstablishments = [
     email: null,
     website: "https://karbonkelbergtourism.co.za/",
     rating: 5,
-    imageUrl:
-      "https://www.chapmanspeakdrive.co.za/media/k2/items/cache/77e3798bb9782084333898c5f75d9aab_XL.jpg",
-    Description: "",
+    imageUrl: "/karbonkelberg_tourism.jpg",
+    description: [
+      `Karbonkelberg Tourism in Hout Bay offers an immersive blend of adventure, nature, 
+    and local culture. Specializing in guided hikes, sea‑kayaking, and coastal explorations, the
+     tours take visitors through the dramatic Karbonkelberg mountains, The Sentinel, and along
+      Cape Town’s stunning coastline. Guests enjoy breathtaking views, wildlife spotting, and 
+      hands-on experiences with the local fishing community, including food tastings and craft 
+      interactions. Tailored for varying fitness levels, the excursions combine education, outdoor
+       adventure, and cultural insight. With expert guides, safe routes, and unforgettable scenery,
+        Karbonkelberg Tourism provides a unique way to explore Hout Bay’s natural beauty and heritage.`,
+    ],
   },
+
+  //Beaches -----------------------------------------------------------------------------------------
+  {
+    id: "b1",
+    name: "Hout Bay Beach",
+    tradingHours: null,
+    location: null,
+    address: null,
+    category: ["Beach", "Swimming", "Walking"],
+    type: "beaches",
+    phoneNumber: null,
+    email: null,
+    website: null,
+    rating: null,
+    imageUrl: "/beach_hout_bay.jpg",
+    description: [
+      `Hout Bay Beach is a long, sweeping stretch of golden sand framed
+     by mountains and the picturesque Hout Bay Harbour. Popular with locals and
+      visitors alike, it’s ideal for leisurely walks, beach picnics, and horse riding 
+      along the shoreline. The calm bay waters make it great for kayaking, 
+      paddleboarding, and swimming, while the surrounding views of Chapman’s
+       Peak and the Sentinel create a stunning backdrop. Families love its relaxed
+        atmosphere and easy access to nearby cafés and restaurants. With its mix of
+         natural beauty and coastal charm, Hout Bay Beach offers one of Cape Town’s
+          most scenic seaside escapes.`,
+    ],
+  },
+  {
+    id: "b2",
+    name: "Sandy Bay Beach",
+    tradingHours: null,
+    location: null,
+    address: null,
+    category: ["Beach", "Swimming", "Walking"],
+    type: "beaches",
+    phoneNumber: null,
+    email: null,
+    website: null,
+    rating: null,
+    imageUrl: "/sandy_bay.jpeg",
+    description: [
+      `Sandy Bay is one of Cape Town’s most secluded and beautiful beaches, 
+      tucked between Llandudno and the Karbonkelberg mountains. Known for its 
+      pristine white sand, dramatic rock formations, and crystal-clear Atlantic 
+      waters, it offers a peaceful escape from the city. Accessible only by a 
+      scenic walk through coastal fynbos, the journey adds to its sense of
+       exclusivity. Sandy Bay is also South Africa’s only unofficial nudist
+        beach, attracting both locals and visitors seeking a relaxed, natural 
+        atmosphere. With breathtaking sunsets and a tranquil setting, it’s a
+         hidden gem for those looking to experience Cape Town’s wilder,
+          untouched coastline.`,
+    ],
+  },
+  {
+    id: "b3",
+    name: "Llandudno Beach",
+    tradingHours: null,
+    location: null,
+    address: null,
+    category: ["Beach", "Swimming", "Walking"],
+    type: "beaches",
+    phoneNumber: null,
+    email: null,
+    website: null,
+    rating: null,
+    imageUrl: "/llandudno_beach.webp",
+    description: [
+      `Llandudno Beach is one of Cape Town’s most picturesque coastal gems, 
+    nestled beneath the Twelve Apostles mountains. Surrounded by large granite
+     boulders and backed by luxury homes, it offers soft white sand and striking 
+     turquoise waters ideal for sunbathing, beach games, and photography. The beach
+      is popular with surfers for its powerful waves, though the cold Atlantic water
+       keeps it refreshingly quiet compared to busier spots. With no shops or
+        restaurants nearby, Llandudno retains a peaceful, unspoiled charm. Its
+         breathtaking sunsets and tranquil beauty make it a favourite spot for
+          locals and visitors seeking a serene coastal escape.`,
+    ],
+  },
+
+  //Galleries  -----------------------------------------------------------------------------------------
 ];
+
+export default establishments;

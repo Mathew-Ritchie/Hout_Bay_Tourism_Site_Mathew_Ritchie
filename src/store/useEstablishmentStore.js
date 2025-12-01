@@ -1,9 +1,9 @@
 // src/store/useEstablishmentStore.js
 import { create } from "zustand";
-//import { mockEstablishments } from "../Establishment Data/establishmentData"; // Import the data
+import mockEstablishments from "../Establishment Data/establishmentData"; // Import the data
 
 // API
-const API_BASE_URL = "https://houtbay-api.onrender.com/api/establishments";
+//const API_BASE_URL = "https://houtbay-api.onrender.com/api/establishments";
 
 // Define your store
 export const useEstablishmentStore = create((set, get) => ({
@@ -84,31 +84,57 @@ export const useEstablishmentStore = create((set, get) => ({
   },
 
   // Fetch initial establishments from the API
-  fetchInitialEstablishments: async () => {
-    set({ loading: true, error: null, message: "Fetching establishments from API..." });
-    try {
-      const response = await fetch(API_BASE_URL);
-      if (!response.ok) {
-        throw new Error(`API request failed with status ${response.status}`);
-      }
-      const data = await response.json();
+  // fetchInitialEstablishments: async () => {
+  //   set({ loading: true, error: null, message: "Fetching establishments from API..." });
+  //   try {
+  //     const response = await fetch(API_BASE_URL);
+  //     if (!response.ok) {
+  //       throw new Error(`API request failed with status ${response.status}`);
+  //     }
+  //     const data = await response.json();
 
-      const uniqueTypes = [...new Set(data.map((item) => item.type))].filter((type) => type).sort();
+  //     const uniqueTypes = [...new Set(data.map((item) => item.type))].filter((type) => type).sort();
+
+  //     set({
+  //       allEstablishments: data,
+  //       establishmentTypes: uniqueTypes,
+  //       message: `All establishments loaded from API.`,
+  //       loading: false,
+  //     });
+
+  //     get()._applyClientSideFilters();
+  //     get()._updateCategoriesByFilter();
+  //   } catch (err) {
+  //     console.error("Zustand Store: Error fetching from API:", err);
+  //     set({
+  //       error: "Failed to fetch establishments from API.",
+  //       message: `Failed to fetch: ${err.message}`,
+  //       loading: false,
+  //     });
+  //   }
+  // },
+
+  fetchInitialEstablishments: () => {
+    set({ loading: true, error: null, message: "Loading establishments..." });
+
+    try {
+      const data = mockEstablishments;
+      const uniqueTypes = [...new Set(data.map((item) => item.type))].filter(Boolean).sort();
 
       set({
         allEstablishments: data,
         establishmentTypes: uniqueTypes,
-        message: `All establishments loaded from API.`,
+        message: "Establishments loaded from local data.",
         loading: false,
       });
 
       get()._applyClientSideFilters();
       get()._updateCategoriesByFilter();
     } catch (err) {
-      console.error("Zustand Store: Error fetching from API:", err);
+      console.error("Zustand Store: Error loading local establishments:", err);
       set({
-        error: "Failed to fetch establishments from API.",
-        message: `Failed to fetch: ${err.message}`,
+        error: "Failed to load local establishment data.",
+        message: err.message,
         loading: false,
       });
     }
@@ -116,26 +142,54 @@ export const useEstablishmentStore = create((set, get) => ({
 
   // Fetch individual establishment details by ID
 
-  fetchIndividualEstablishment: async (id) => {
+  // fetchIndividualEstablishment: async (id) => {
+  //   set({
+  //     singleEstablishmentLoading: true,
+  //     singleEstablishmentError: null,
+  //     selectedEstablishmentDetails: null,
+  //   });
+  //   try {
+  //     const response = await fetch(`${API_BASE_URL}/${id}`);
+  //     if (!response.ok) {
+  //       throw new Error(`API request failed with status ${response.status}`);
+  //     }
+  //     const establishment = await response.json();
+
+  //     set({
+  //       selectedEstablishmentDetails: establishment,
+  //       singleEstablishmentLoading: false,
+  //       singleEstablishmentError: null,
+  //     });
+  //   } catch (err) {
+  //     console.error("Zustand Store: Error fetching individual establishment:", err);
+  //     set({
+  //       selectedEstablishmentDetails: null,
+  //       singleEstablishmentLoading: false,
+  //       singleEstablishmentError: err.message,
+  //     });
+  //   }
+  // },
+
+  fetchIndividualEstablishment: (id) => {
     set({
       singleEstablishmentLoading: true,
       singleEstablishmentError: null,
-      selectedEstablishmentDetails: null,
     });
+
     try {
-      const response = await fetch(`${API_BASE_URL}/${id}`);
-      if (!response.ok) {
-        throw new Error(`API request failed with status ${response.status}`);
+      const { allEstablishments } = get();
+      const establishment = allEstablishments.find((item) => String(item.id) === String(id));
+
+      if (!establishment) {
+        throw new Error("Establishment not found");
       }
-      const establishment = await response.json();
 
       set({
         selectedEstablishmentDetails: establishment,
         singleEstablishmentLoading: false,
-        singleEstablishmentError: null,
       });
     } catch (err) {
-      console.error("Zustand Store: Error fetching individual establishment:", err);
+      console.error("Zustand Store: Error finding establishment:", err);
       set({
         selectedEstablishmentDetails: null,
         singleEstablishmentLoading: false,
