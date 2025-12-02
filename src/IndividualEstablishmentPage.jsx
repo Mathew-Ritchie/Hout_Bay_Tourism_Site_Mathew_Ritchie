@@ -42,7 +42,7 @@ export default function IndividualEstablishmentPage() {
 
   return (
     <div className="min-h-screen bg-gray-100 py-8 px-4 sm:px-6 lg:px-8 flex flex-col items-center pt-0">
-      {selectedEstablishmentDetails && ( // <-- NEW: Conditional rendering for the link
+      {selectedEstablishmentDetails && (
         <div className="w-screen mb-4 flex justify-start pl-4 sm:pl-6 lg:pl-8">
           {" "}
           {/* Added flex and justify-start for alignment */}
@@ -68,29 +68,23 @@ export default function IndividualEstablishmentPage() {
         <p className="text-center text-red-600 text-xl">Error: {singleEstablishmentError}</p>
       )}
 
+      {/* Establishment Image */}
       {selectedEstablishmentDetails && !singleEstablishmentLoading && !singleEstablishmentError ? (
         <div className="bg-white rounded-lg shadow-xl p-6 sm:p-8 max-w-2xl w-full inline-flex flex-col justify-center items-start">
           {selectedEstablishmentDetails.imageUrl && (
             <img
               src={`${selectedEstablishmentDetails.imageUrl}`}
-              // src={
-              //   selectedEstablishmentDetails.imageUrl.startsWith("http")
-              //     ? selectedEstablishmentDetails.imageUrl
-              //     : `https://houtbay-api.onrender.com/images/${selectedEstablishmentDetails.imageUrl}`
-              // }
               alt={selectedEstablishmentDetails.name}
               className="w-full h-64 object-cover object-center rounded-lg mb-6"
-              //onError={(e) => {
-              // Optional: fallback if the image fails to load
-              //  e.target.src = "/fallback-image.jpg"; // put a local fallback in /public if you want
-              // }}
             />
           )}
 
+          {/* Establishment Name */}
           <h2 className="text-center text-3xl font-bold text-gray-900 mb-4">
             {selectedEstablishmentDetails.name}
           </h2>
 
+          {/* Establish categories */}
           {selectedEstablishmentDetails.category && (
             <div className="inline-flex gap-3">
               {selectedEstablishmentDetails.category.map((item, index) => (
@@ -102,13 +96,14 @@ export default function IndividualEstablishmentPage() {
           )}
 
           {/* Operating hours  */}
-          <p className="text-lg text-gray-700 mb-2 inline-flex justify-center items-center gap-2 ">
-            <span className="w-6 h-6">
-              <OpenTime />
-            </span>
-            {selectedEstablishmentDetails.tradingHours}
-          </p>
+          <div className="text-lg text-gray-700 mb-2 inline-flex justify-center items-center gap-2 ">
+            <OpenTime />
+            {selectedEstablishmentDetails.tradingHours
+              ? selectedEstablishmentDetails.tradingHours
+              : "Sorry - no trading hours available"}
+          </div>
 
+          {/* Establishment description */}
           {selectedEstablishmentDetails.description &&
             selectedEstablishmentDetails.description.map((item, index) => (
               <p className="text-justify pb-5" key={index}>
@@ -116,23 +111,29 @@ export default function IndividualEstablishmentPage() {
               </p>
             ))}
 
-          {/* Address  */}
-          <p className="inline-flex justify-center items-center gap-2">
-            <span className="h-6 w-6">
-              <LocationSVG />{" "}
-            </span>
-            {selectedEstablishmentDetails.address}
-          </p>
-          <p className="inline-flex justify-center items-center gap-2">
-            <PhoneSVG /> {selectedEstablishmentDetails.phoneNumber}
-          </p>
+          {/* Establishment Address  */}
+          <div className="inline-flex justify-center items-center gap-2">
+            <LocationSVG />{" "}
+            {selectedEstablishmentDetails.address
+              ? selectedEstablishmentDetails.address
+              : "Sorry - no address available"}
+          </div>
 
-          <p className="inline-flex justify-center items-center gap-2">
+          {/* Establishment Phone Number  */}
+          <div className="inline-flex justify-center items-center gap-2">
+            <PhoneSVG />
+            {selectedEstablishmentDetails.phoneNumber
+              ? selectedEstablishmentDetails.phoneNumber
+              : "Sorry - no phone number available"}
+          </div>
+
+          {/* Establishment Rating  */}
+          <div className="inline-flex justify-center items-center gap-2">
             <RatingSVG />
             {selectedEstablishmentDetails.rating
               ? `${selectedEstablishmentDetails.rating}/5`
-              : "N/A"}
-          </p>
+              : "Sorry - no rating available"}
+          </div>
 
           <div className="inline-flex justify-center flex-wrap items-center gap-2 pt-5">
             {selectedEstablishmentDetails.website && (
