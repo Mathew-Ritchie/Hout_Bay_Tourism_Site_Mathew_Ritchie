@@ -44,16 +44,16 @@ export default function IndividualEstablishmentPage() {
           </Link>
         </div>
       )}
-
+      {/* Loading */}
       {singleEstablishmentLoading && (
         <p className="text-center text-gray-600 text-xl">Loading details...</p>
       )}
-
+      {/* error */}
       {singleEstablishmentError && (
         <p className="text-center text-red-600 text-xl">Error: {singleEstablishmentError}</p>
       )}
 
-      {/* Establishment Image */}
+      {/* Main content */}
       {selectedEstablishmentDetails && !singleEstablishmentLoading && !singleEstablishmentError && (
         <IndividualEstablishmentCard details={selectedEstablishmentDetails} />
       )}

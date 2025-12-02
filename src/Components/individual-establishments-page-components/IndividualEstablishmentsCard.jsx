@@ -1,10 +1,10 @@
-import MapSVG from "./SVGs/map";
-import EmailSVG from "./SVGs/email";
-import WebSVG from "./SVGs/WebSVG";
-import OpenTime from "./SVGs/OpenTime";
-import LocationSVG from "./SVGs/LocationSVG";
-import PhoneSVG from "./SVGs/PhoneSVG";
-import RatingSVG from "./SVGs/RatingSVG";
+import MapSVG from "../../SVGs/map";
+import EmailSVG from "../../SVGs/email";
+import WebSVG from "../../SVGs/WebSVG";
+import OpenTime from "../../SVGs/OpenTime";
+import LocationSVG from "../../SVGs/LocationSVG";
+import PhoneSVG from "../../SVGs/PhoneSVG";
+import RatingSVG from "../../SVGs/RatingSVG";
 
 export default function IndividualEstablishmentCard({ details }) {
   return (
