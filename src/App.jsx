@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import LandingPage from "./LandingPage";
-import EstablishmentsListPage from "./EstablishmentsListPage";
-import IndividualEstablishmentPage from "./IndividualEstablishmentPage";
+import LandingPage from "./pages/LandingPage";
+import EstablishmentsListPage from "./pages/EstablishmentsListPage";
+import IndividualEstablishmentPage from "./pages/IndividualEstablishmentPage";
 
 export default function App() {
   return (

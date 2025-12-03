@@ -1,12 +1,12 @@
 // src/pages/EstablishmentsListPage.jsx
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom"; // Import useParams
-import { useEstablishmentStore } from "./store/useEstablishmentStore"; // Correct path to your Zustand store
-import EstablishmentCards from "./Components/EstablishmentCards"; // Correct path to your components
-import TypeSelection from "./Components/TypeSelection";
+import { useEstablishmentStore } from "../store/useEstablishmentStore"; // Correct path to your Zustand store
+import EstablishmentCards from "../Components/EstablishmentCards"; // Correct path to your components
+import TypeSelection from "../Components/TypeSelection";
 import "./App.css"; // Keep your global styles
-import CategorySelection from "./Components/CategorySelection";
-import ScrollToTopBtn from "./Components/ScrollUpButton";
+import CategorySelection from "../Components/CategorySelection";
+import ScrollToTopBtn from "../Components/ScrollUpButton";
 
 export default function EstablishmentsListPage() {
   // Get the 'type' parameter from the URL
