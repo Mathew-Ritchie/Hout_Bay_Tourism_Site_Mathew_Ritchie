@@ -13,7 +13,6 @@ import Footer from "../Components/Footer";
 import Gallery from "../Components/Gallery";
 import ScrollToTopBtn from "../Components/ScrollUpButton";
 import { useCurrencyStore } from "../store/useCurrencyStore";
-import NavModalHeader from "../Components/NavModalHeader";
 
 function LandingPage() {
   // Add establishmentTypes to the destructuring list
@@ -36,7 +35,6 @@ function LandingPage() {
   return (
     // Main container for the landing page
     <div className="min-h-screen bg-gray-100 w-screen">
-      <NavModalHeader />
       <Intro />
       <LandingPageTypeSelection />
       <StatComponent />

@@ -83,53 +83,56 @@ export default function NavModalHeader() {
 
         {/* Modal navigation links */}
         <nav className="p-4 space-y-2">
-          <a
-            href="#intro-message"
+          <NavLink
+            to="/#intro-message"
             className="block p-2 rounded-md hover:bg-gray-700 transition duration-200"
             onClick={toggleNav}
           >
             Welcome
-          </a>
-          <a
-            href="#establishment-directory"
+          </NavLink>
+          <NavLink
+            to="/#establishment-directory"
             className="block p-2 rounded-md hover:bg-gray-700 transition duration-200"
             onClick={toggleNav}
           >
             Directory
-          </a>
+          </NavLink>
 
           <NavLink
             to={"/establishments/restaurants"}
             className="text-gray-300 block p-2 rounded-md hover:bg-gray-700 transition duration-200 text-center"
+            onClick={toggleNav}
           >
             Restaurants
           </NavLink>
           <NavLink
             to={"/establishments/attractions"}
             className="text-gray-300 block p-2 rounded-md hover:bg-gray-700 transition duration-200 text-center"
+            onClick={toggleNav}
           >
             Attractions
           </NavLink>
           <NavLink
             to={"/establishments/Health care"}
             className="text-gray-300 block p-2 rounded-md hover:bg-gray-700 transition duration-200 text-center"
+            onClick={toggleNav}
           >
             Health care
           </NavLink>
-          <a
-            href="#interesting-stats"
+          <NavLink
+            to="/#interesting-stats"
             className="block p-2 rounded-md hover:bg-gray-700 transition duration-200"
             onClick={toggleNav}
           >
             Interesting stats
-          </a>
-          <a
-            href="#picture-gallery"
+          </NavLink>
+          <NavLink
+            to="/#picture-gallery"
             className="block p-2 rounded-md hover:bg-gray-700 transition duration-200"
             onClick={toggleNav}
           >
             Gallery
-          </a>
+          </NavLink>
         </nav>
       </div>
     </>
