@@ -4,7 +4,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { useEstablishmentStore } from "../store/useEstablishmentStore";
 
 import restaurant from "../assets/fishandchips.jpg";
-import healthCare from "../assets/healthcare.jpg";
+import beautyAndWellness from "/beauty-and-wellness.jpg";
 import attractions from "../assets/sealisland.jpg";
 import beaches from "../assets/beach_hout_bay.jpg";
 
@@ -14,7 +14,7 @@ export default function LandingPageTypeSelection() {
 
   const typeBackgrounds = {
     restaurants: restaurant,
-    "Health care": healthCare,
+    "Beauty and wellness": beautyAndWellness,
     attractions: attractions,
     beaches: beaches,
   };

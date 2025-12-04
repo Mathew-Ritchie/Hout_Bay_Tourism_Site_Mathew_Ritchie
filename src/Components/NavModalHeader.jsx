@@ -100,24 +100,24 @@ export default function NavModalHeader() {
 
           <NavLink
             to={"/establishments/restaurants"}
-            className="text-gray-300 block p-2 rounded-md hover:bg-gray-700 transition duration-200 text-center"
+            className="text-gray-300 block p-2 rounded-md hover:bg-gray-700 transition duration-200 text-start pl-10"
             onClick={toggleNav}
           >
             Restaurants
           </NavLink>
           <NavLink
             to={"/establishments/attractions"}
-            className="text-gray-300 block p-2 rounded-md hover:bg-gray-700 transition duration-200 text-center"
+            className="text-gray-300 block p-2 rounded-md hover:bg-gray-700 transition duration-200 text-start pl-10"
             onClick={toggleNav}
           >
             Attractions
           </NavLink>
           <NavLink
-            to={"/establishments/Health care"}
-            className="text-gray-300 block p-2 rounded-md hover:bg-gray-700 transition duration-200 text-center"
+            to={"/establishments/Beauty and Wellness"}
+            className="text-gray-300 block p-2 rounded-md hover:bg-gray-700 transition duration-200 text-start pl-10"
             onClick={toggleNav}
           >
-            Health care
+            Beauty and Wellness
           </NavLink>
           <NavLink
             to="/#interesting-stats"

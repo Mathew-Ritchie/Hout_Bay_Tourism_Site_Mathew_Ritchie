@@ -366,7 +366,7 @@ const establishments = [
     location: { latitude: -34.04, longitude: 18.362 },
     address: "Mainstream Centre, Main Rd, Hout Bay",
     category: ["Pharmacy", "Health", "Retail"],
-    type: "Health care", // <-- NEW 'type' property
+    type: "Beauty and wellness", // <-- NEW 'type' property
     phoneNumber: "+27 21 790 5077",
     email: null,
     website: "https://www.clicks.co.za",
@@ -381,7 +381,7 @@ const establishments = [
     location: { latitude: -34.037, longitude: 18.36 },
     address: "The Passageway, Main Rd, Hout Bay, Cape Town, 7806",
     category: ["Pharmacy", "Health", "Retail"],
-    type: "Health care", // <-- NEW 'type' property
+    type: "Beauty and wellness", // <-- NEW 'type' property
     phoneNumber: "+27 21 790 5678",
     email: "rxwheelers@mweb.co.za",
     website: "https://www.wheelerspharmacy.com/",
@@ -396,13 +396,81 @@ const establishments = [
     location: { latitude: -34.037, longitude: 18.36 },
     address: "51 Victoria Rd, Hout Bay, Cape Town, 7806",
     category: ["Pharmacy", "Health", "Retail"],
-    type: "Health care", // <-- NEW 'type' property
+    type: "Beauty and wellness", // <-- NEW 'type' property
     phoneNumber: "+27 21 790 3400",
     email: "rxsentinel@mweb.co.za",
     website: "https://www.wheelerspharmacy.com/general-6",
     rating: 4.1,
     imageUrl: "/sentinal_pharmacy.jpg",
     description: "",
+  },
+  {
+    id: "p4",
+    name: "Sorbet Salon",
+    tradingHours: "Mon-Fri: 08:00 - 18:00, Sat: 08:00 - 17:00, Sun: 9:00 - 16:00",
+    location: { latitude: -34.037, longitude: 18.36 },
+    address: "Mainstream Mall, Main Rd, Scott Estate, Cape Town, 7806",
+    category: ["Nails", "Waxing", "Make up", "Beauty", "Massage"],
+    type: "Beauty and wellness", // <-- NEW 'type' property
+    phoneNumber: "+27 21 790 8519",
+    email: "",
+    website: "https://www.sorbet.co.za/",
+    rating: 4.2,
+    imageUrl: "/sorbet.png",
+    description: "",
+  },
+  {
+    id: "p5",
+    name: "Martin's barber",
+    tradingHours: "Mon-Sat: 08:00 - 18:00, Sun: 9:00 - 15:00",
+    location: { latitude: -34.037, longitude: 18.36 },
+    address: "C14 Princess St, Hout Bay, Cape Town, 7806",
+    category: ["Barber", "Waxing", "Beauty"],
+    type: "Beauty and wellness", // <-- NEW 'type' property
+    phoneNumber: "+27 21 790 8519",
+    email: "",
+    website: "https://www.facebook.com/martinsbarbershophoutbay/",
+    rating: 4.7,
+    imageUrl: "/martins-barber.webp",
+    description: [
+      `Get ready for a fresh new look at Martins Barbershop! Our barber cuts hair for man, 
+      women, and kids of all ages, catering to every hair type and style. From trendy trims 
+      to classic cuts, we're here to bring your vision to life. Walk-ins welcome! Book your
+       appointment today and experience top-notch service at unbeatable prices. Come visit us
+        and let's get you looking sharp!`,
+    ],
+  },
+  {
+    id: "p6",
+    name: "Mainstream Hair",
+    tradingHours: "Mon-Sat: 09:00 - 17:00, Sun: 10:00 - 14:00",
+    location: { latitude: -34.037, longitude: 18.36 },
+    address: "C6 Mainstream Centre, Princess St, Hout Bay, Cape Town, 7806",
+    category: ["Hairdresser", "Waxing", "Beauty"],
+    type: "Beauty and wellness", // <-- NEW 'type' property
+    phoneNumber: "+27 21 790 7272",
+    email: "",
+    website: "",
+    rating: 4.6,
+    imageUrl: "/mainstream-hair.webp",
+    description: [``],
+  },
+  {
+    id: "p7",
+    name: "Hout Bay Dental Studio",
+    tradingHours: "Mon-Fri: 08:30 - 17:00, Sat: 09:00 - 12:00, Sun: Closed",
+    location: { latitude: -34.037, longitude: 18.36 },
+    address: "Joslyn Place, 34 Victoria Ave, Hout Bay, Cape Town, 7806",
+    category: ["Dentist", "Oral Hygienist"],
+    type: "Beauty and wellness", // <-- NEW 'type' property
+    phoneNumber: "+27 21 790 2910",
+    email: "info@hbds.co.za",
+    website: "https://www.hbds.co.za/",
+    rating: 4.4,
+    imageUrl: "/dental-studio.webp",
+    description: [
+      `Looking for a trusted dentist in Hout Bay? At Hout Bay Dental Studio, we offer advanced general, aesthetic, and restorative dentistry with a gentle, holistic approach. For over 40 years, we’ve helped local families and international visitors feel cared for, listened to, and confident in their smiles. From same-day crowns and dental implants to whitening, smile design, and preventative care, our experienced team combines cutting-edge technology with calm, compassionate treatment. We prioritise long-term health, comfort, and natural-looking results — with multilingual care and sedation options available. Whether you’re due for a check-up or planning a full smile makeover, we’ll walk the journey with you.`,
+    ],
   },
   //Attractions -----------------------------------------------------------------------------------------
   {
