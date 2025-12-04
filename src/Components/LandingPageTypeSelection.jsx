@@ -4,7 +4,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { useEstablishmentStore } from "../store/useEstablishmentStore";
 
 import restaurant from "../assets/fishandchips.jpg";
-import beautyAndWellness from "/beauty-and-wellness.jpg";
+import beautyAndWellness from "/beauty-and-wellness.jpeg";
 import attractions from "../assets/sealisland.jpg";
 import beaches from "../assets/beach_hout_bay.jpg";
 
